@@ -19,5 +19,6 @@ project previews, tool marks, and the profile image load correctly.
 - `index.html` — complete static portfolio, including styles and interactions
 - `assets/` — project imagery, profile image, illustrations, and tool logos
 
-The contact form prepares an email draft in the visitor's email app; it does not
-send or store information through a website backend.
+The contact form submits inquiry fields (name, email, subject, and message) to
+Formspree at `https://formspree.io/f/xoejzjdd` for delivery. Visitors should not
+include passwords or other sensitive personal information.

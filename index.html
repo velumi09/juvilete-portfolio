@@ -260,6 +260,7 @@ body.light .code-lines span{color:#59438c}
 body.light .eyebrow{background:rgba(255,255,255,.82)}
 body.light .field input::placeholder,body.light .field textarea::placeholder{color:#505875;opacity:1}
 body.light .form-feedback{color:#286747}
+#contactForm button:disabled{opacity:.72;cursor:wait}
 :where(a,button,input,textarea,[tabindex]):focus-visible{outline:3px solid var(--peri);outline-offset:3px}
 .core-card{isolation:isolate;overflow:hidden;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .35s,box-shadow .35s}
 .core-card:before{content:"";position:absolute;inset:-45%;z-index:-1;pointer-events:none;background:radial-gradient(circle at 70% 30%,rgba(126,164,255,.25),transparent 35%),linear-gradient(120deg,transparent 35%,rgba(218,231,255,.11) 50%,transparent 65%);opacity:0;transform:translateX(-18%) rotate(8deg);transition:opacity .4s,transform .7s cubic-bezier(.2,.8,.2,1)}
@@ -358,7 +359,7 @@ body.light .form-feedback{color:#286747}
 </div></section>
 <section id="contact"><div class="container"><div class="section-head reveal"><div class="kicker">05 / LET'S CONNECT</div><h2>Have an idea? <span class="gradient-text">Let's build it.</span></h2><p>Open to thoughtful collaborations, project conversations, and opportunities to learn with a team.</p></div>
 <div class="contact-grid"><div class="glass-card contact-intro reveal"><h3>Find me online</h3><p>Reach out through any of these channels. I'd be happy to hear what you're working on.</p><div class="contact-links"><a class="contact-link" href="mailto:juviletecatungal295@gmail.com"><span class="link-icon">✉</span><span><b>Email</b><small>juviletecatungal295@gmail.com</small></span></a><a class="contact-link" href="https://github.com/velumi09" target="_blank" rel="noopener noreferrer"><span class="link-icon">⌘</span><span><b>GitHub</b><small>github.com/velumi09</small></span></a><a class="contact-link" href="https://www.linkedin.com/in/juvilete-catungal-5b8016374/" target="_blank" rel="noopener noreferrer"><span class="link-icon">in</span><span><b>LinkedIn</b><small>Connect professionally</small></span></a><a class="contact-link" href="https://www.instagram.com/bluvelri?rpxt=Ymllcm85MWV3MzF0" target="_blank" rel="noopener noreferrer"><span class="link-icon">◎</span><span><b>Instagram</b><small>@bluvelri</small></span></a><a class="contact-link" href="https://www.facebook.com/share/1A4QqYqmUL/" target="_blank" rel="noopener noreferrer"><span class="link-icon">f</span><span><b>Facebook</b><small>Visit my Facebook profile</small></span></a></div></div>
-<form class="glass-card reveal reveal-delay" id="contactForm"><div class="form-grid"><div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required minlength="2" placeholder="e.g. Alex Santos"></div><div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="alex@example.com"></div><div class="field full"><label for="subject">Subject</label><input id="subject" name="subject" required minlength="3" placeholder="What would you like to discuss?"></div><div class="field full"><label for="message">Message</label><textarea id="message" name="message" required minlength="10" placeholder="Tell me a little about your idea..."></textarea></div><div class="field full"><button class="btn btn-primary" type="submit">Prepare Email <span>↗</span></button><p class="form-note">This form opens your default email app with the message filled in. It does not send or store your information on this website.</p><div class="form-feedback" id="formFeedback" role="status" aria-live="polite"></div></div></div></form>
+<form class="glass-card reveal reveal-delay" id="contactForm" action="https://formspree.io/f/xoejzjdd" method="POST"><div class="form-grid"><div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required minlength="2" placeholder="e.g. Alex Santos"></div><div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="alex@example.com"></div><div class="field full"><label for="subject">Subject</label><input id="subject" name="subject" required minlength="3" placeholder="What would you like to discuss?"></div><div class="field full"><label for="message">Message</label><textarea id="message" name="message" required minlength="10" placeholder="Tell me a little about your idea..."></textarea></div><div class="field full"><button class="btn btn-primary" type="submit">Send Inquiry <span>↗</span></button><p class="form-note">Your inquiry is submitted to Formspree so it can be delivered to me. Please do not include passwords or other sensitive personal information.</p><div class="form-feedback" id="formFeedback" role="status" aria-live="polite"></div></div></div></form>
 </div></div></section>
 </main>
 <footer><div class="container footer-inner"><span>© <span id="year"></span> <strong>Juvilete A. Catungal</strong> · Made with intention.</span><span>Designed in blueberry blues, engineered with curiosity. <a class="back-top" href="#home">Back to top ↑</a></span></div></footer>
@@ -636,8 +637,30 @@ function openProject(key){const p=projects[key];if(!p)return;$('#modalKicker').t
 function closeProject(){$('#projectModal').classList.remove('open');document.body.style.overflow=''}
 $$('[data-project]').forEach(card=>{card.addEventListener('click',()=>openProject(card.dataset.project));card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openProject(card.dataset.project)}})});
 $('#modalClose').addEventListener('click',closeProject);$('#projectModal').addEventListener('click',e=>{if(e.target===$('#projectModal'))closeProject()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeProject()});
-// Contact form validates locally, then prepares a draft in the visitor's email client.
-$('#contactForm').addEventListener('submit',e=>{e.preventDefault();const form=e.currentTarget;if(!form.reportValidity())return;const name=$('#name').value.trim(),email=$('#email').value.trim(),subject=$('#subject').value.trim(),message=$('#message').value.trim();const body=`Hi Juvilete,\\n\\n${message}\\n\\nBest,\\n${name}\\n${email}`;const url=`mailto:juviletecatungal295@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;$('#formFeedback').textContent='Your email draft is ready to open.';window.location.href=url;});
+$('#contactForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const form=e.currentTarget;
+  if(!form.reportValidity())return;
+  const submitButton=form.querySelector('button[type="submit"]');
+  const feedback=$('#formFeedback');
+  submitButton.disabled=true;
+  submitButton.setAttribute('aria-busy','true');
+  feedback.textContent='Sending your inquiry…';
+  try{
+    const response=await fetch(form.action,{method:form.method,body:new FormData(form),headers:{Accept:'application/json'}});
+    if(!response.ok){
+      feedback.textContent='Your inquiry could not be sent. Please try again or email me directly.';
+      return;
+    }
+    form.reset();
+    feedback.textContent='Thank you! Your inquiry has been sent successfully.';
+  }catch{
+    feedback.textContent='Unable to reach Formspree. Please check your connection and try again, or email me directly.';
+  }finally{
+    submitButton.disabled=false;
+    submitButton.removeAttribute('aria-busy');
+  }
+});
 $('#year').textContent=new Date().getFullYear();
 // Reveal-on-scroll animation with a safe fallback.
 if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>entry.target.classList.toggle('visible',entry.isIntersecting)),{threshold:.1,rootMargin:'0px 0px -4% 0px'});$$('.reveal').forEach(el=>observer.observe(el))}else $$('.reveal').forEach(el=>el.classList.add('visible'));

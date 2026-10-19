@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f0e17">
+<meta name="description" content="Juvilete A. Catungal — UI/UX Designer, Network Solutions Specialist, and bluebell-loving code gardener.">
+<title>Juvilete.dev — Bluebell Code Garden</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2280%22%3E💜%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f0e17;--surface:#1b1b2f;--glass:rgba(30,27,46,.68);--lav:#c4b5fd;--peri:#8b5cf6;--blue:#3b82f6;--text:#f3f4f6;--muted:#b9b6d3;--line:rgba(196,181,253,.17);--shadow:0 22px 70px rgba(0,0,0,.28);--radius:24px;--font:'Plus Jakarta Sans',sans-serif;--heading:'Outfit',sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:95px}body{margin:0;background:radial-gradient(ellipse at 10% 0%,rgba(139,92,246,.13),transparent 38%),radial-gradient(ellipse at 90% 35%,rgba(59,130,246,.10),transparent 32%),var(--bg);color:var(--text);font-family:var(--font);line-height:1.65;overflow-x:hidden}body.light{--bg:#f5f3ff;--surface:#fff;--glass:rgba(255,255,255,.76);--text:#201b36;--muted:#625d7d;--line:rgba(109,75,190,.18);--shadow:0 22px 70px rgba(57,43,104,.12);background:radial-gradient(ellipse at 10% 0%,rgba(139,92,246,.15),transparent 38%),#f5f3ff}a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}button,a{ -webkit-tap-highlight-color:transparent}button{cursor:pointer}.container{width:min(1120px,calc(100% - 44px));margin:auto}.ambient{position:fixed;inset:0;pointer-events:none;z-index:-1;overflow:hidden}.orb{position:absolute;width:360px;height:360px;border-radius:50%;filter:blur(90px);opacity:.13;background:var(--peri);animation:drift 18s ease-in-out infinite alternate}.orb:nth-child(1){top:10%;left:-180px}.orb:nth-child(2){right:-170px;top:45%;background:var(--blue);animation-delay:-7s}.orb:nth-child(3){bottom:-250px;left:40%;background:#d8b4fe;animation-delay:-12s}@keyframes drift{to{transform:translate(80px,-60px) scale(1.15)}}#particles{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1;opacity:.65}
+header{position:fixed;top:0;left:0;right:0;z-index:50;padding:15px 0;transition:.3s}header.scrolled{background:rgba(15,14,23,.72);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}body.light header.scrolled{background:rgba(245,243,255,.78)}.nav{display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{font:700 1.3rem var(--heading);letter-spacing:-.8px;white-space:nowrap}.brand span{color:var(--lav)}.brand-dot{display:inline-block;width:7px;height:7px;background:#a7f3d0;border-radius:50%;margin-left:3px;box-shadow:0 0 14px #a7f3d0;animation:pulse 1.8s infinite}@keyframes pulse{50%{opacity:.35;box-shadow:0 0 3px #a7f3d0}}.nav-links{display:flex;gap:25px;align-items:center;color:var(--muted);font-size:.86rem}.nav-links a{transition:.2s}.nav-links a:hover,.nav-links a.active{color:var(--lav)}.nav-actions{display:flex;gap:9px;align-items:center}.icon-btn,.menu-btn{width:40px;height:40px;border:1px solid var(--line);border-radius:13px;background:var(--glass);color:var(--text);display:grid;place-items:center}.menu-btn{display:none}.icon-btn:hover,.menu-btn:hover{border-color:var(--lav);transform:translateY(-2px)}
+.hero{min-height:100vh;display:flex;align-items:center;padding:145px 0 90px;position:relative}.hero-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:65px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:var(--glass);padding:8px 13px;border-radius:99px;color:var(--lav);font:500 .76rem 'Fira Code',monospace;letter-spacing:.3px}.eyebrow i{width:7px;height:7px;background:#a7f3d0;border-radius:50%;box-shadow:0 0 12px #a7f3d0}.hero h1{font:700 clamp(2.8rem,6vw,5.25rem)/1.04 var(--heading);letter-spacing:-2.8px;margin:25px 0 20px}.gradient-text{background:linear-gradient(105deg,#e9d5ff 0%,#a5b4fc 48%,#93c5fd 100%);background-clip:text;-webkit-background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:620px;font-size:1.02rem}.hero p strong{color:var(--text);font-weight:600}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:29px 0 34px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 18px;border-radius:14px;border:1px solid var(--line);font-weight:700;font-size:.88rem;transition:transform .25s,box-shadow .25s,border-color .25s}.btn:hover{transform:translateY(-3px)}.btn-primary{border:0;background:linear-gradient(110deg,#8b5cf6,#6366f1 55%,#3b82f6);color:white;box-shadow:0 9px 28px rgba(99,102,241,.23)}.btn-primary:hover{box-shadow:0 14px 35px rgba(99,102,241,.38)}.btn-glass{background:var(--glass);color:var(--text)}.stats{display:flex;gap:24px;flex-wrap:wrap}.stat{padding-left:13px;border-left:2px solid var(--peri)}.stat b{display:block;font:700 1.15rem var(--heading)}.stat span{display:block;color:var(--muted);font-size:.72rem;max-width:145px}
+.hero-art{position:relative;min-height:430px;display:grid;place-items:center}.halo{position:absolute;width:310px;height:310px;border-radius:50%;border:1px solid rgba(196,181,253,.28);box-shadow:0 0 90px rgba(139,92,246,.12),inset 0 0 60px rgba(139,92,246,.06);animation:rotate 28s linear infinite}.halo:before,.halo:after{content:"";position:absolute;border-radius:50%;border:1px dashed rgba(147,197,253,.28);inset:23px}.halo:after{inset:55px;border-style:solid}@keyframes rotate{to{transform:rotate(360deg)}}.core-card{width:min(310px,90%);aspect-ratio: .88;position:relative;border:1px solid rgba(196,181,253,.26);border-radius:30px;background:linear-gradient(145deg,rgba(45,39,75,.9),rgba(21,25,49,.84));box-shadow:var(--shadow),0 0 60px rgba(139,92,246,.13);backdrop-filter:blur(16px);padding:24px;transform:rotate(3deg);transition:transform .4s}.core-card:hover{transform:rotate(0) translateY(-7px)}body.light .core-card{background:linear-gradient(145deg,rgba(255,255,255,.95),rgba(230,225,255,.9))}.card-top{display:flex;justify-content:space-between;align-items:center;font: .7rem 'Fira Code',monospace;color:var(--muted)}.mini-dots{display:flex;gap:5px}.mini-dots i{width:6px;height:6px;border-radius:50%;background:var(--peri)}.avatar-symbol{display:grid;place-items:center;margin:32px auto 18px;width:112px;height:112px;border-radius:32px;background:linear-gradient(135deg,rgba(196,181,253,.22),rgba(59,130,246,.18));border:1px solid rgba(196,181,253,.28);font:700 2.7rem var(--heading);color:#e9d5ff;box-shadow:0 0 40px rgba(139,92,246,.18)}.core-card h3{text-align:center;font:600 1.35rem var(--heading);margin:0}.core-card>p{text-align:center;color:var(--muted);font-size:.8rem;margin:4px 0 20px}.code-lines{border-top:1px solid var(--line);padding-top:15px;font: .68rem/2 'Fira Code',monospace;color:var(--muted)}.code-lines span{color:#c4b5fd}.float-chip{position:absolute;z-index:2;border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(12px);padding:12px 15px;border-radius:15px;box-shadow:var(--shadow);font-size:.77rem;animation:bob 5s ease-in-out infinite}.float-chip b{color:var(--lav)}.chip-one{top:42px;right:-5px}.chip-two{bottom:48px;left:-15px;animation-delay:-2.5s}@keyframes bob{50%{transform:translateY(-9px)}}
+section{padding:100px 0;position:relative}.section-head{max-width:650px;margin-bottom:38px}.kicker{font:500 .74rem 'Fira Code',monospace;color:var(--lav);letter-spacing:1.4px;text-transform:uppercase}.section-head h2{font:700 clamp(2rem,4vw,3.2rem)/1.1 var(--heading);letter-spacing:-1.2px;margin:10px 0 14px}.section-head p{color:var(--muted);margin:0}.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:22px}.glass-card{background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(14px);border-radius:var(--radius);padding:27px;box-shadow:0 15px 45px rgba(0,0,0,.08)}.about-card h3,.project-card h3,.skill-card h3{font:600 1.3rem var(--heading);margin:0 0 12px}.about-card p{color:var(--muted);font-size:.91rem}.tag-list{display:flex;gap:8px;flex-wrap:wrap;margin-top:19px}.tag{font: .7rem 'Fira Code',monospace;color:var(--lav);padding:7px 10px;border-radius:9px;background:rgba(139,92,246,.11);border:1px solid rgba(139,92,246,.2)}.focus-list{display:grid;grid-template-columns:1fr 1fr;gap:13px}.focus-item{padding:19px;border:1px solid var(--line);border-radius:17px;background:rgba(139,92,246,.045)}.focus-icon{font-size:1.25rem;margin-bottom:10px}.focus-item b{display:block;font-size:.9rem}.focus-item span{font-size:.78rem;color:var(--muted)}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.project-card{position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:365px;transition:transform .3s,border-color .3s,box-shadow .3s;cursor:pointer}.project-card:hover{transform:translateY(-8px);border-color:rgba(196,181,253,.5);box-shadow:0 25px 55px rgba(64,45,126,.2)}.project-visual{height:145px;border-radius:17px;margin-bottom:22px;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 30% 20%,rgba(196,181,253,.24),transparent 45%),linear-gradient(135deg,rgba(139,92,246,.16),rgba(59,130,246,.13));border:1px solid var(--line)}.project-visual:before,.project-visual:after{content:"";position:absolute;border:1px solid rgba(196,181,253,.27);border-radius:50%;width:120px;height:120px}.project-visual:after{width:80px;height:80px}.visual-icon{font-size:2.3rem;z-index:1;filter:drop-shadow(0 0 15px rgba(196,181,253,.6))}.project-card p{font-size:.84rem;color:var(--muted);margin:0 0 18px}.project-card .tag-list{margin-top:auto;padding-top:17px}.project-card .learn{position:absolute;top:28px;right:28px;color:var(--lav);font-size:.75rem;opacity:0;transform:translateX(-5px);transition:.25s}.project-card:hover .learn{opacity:1;transform:translateX(0)}
+.skills-wrap{display:grid;grid-template-columns:230px 1fr;gap:20px}.skill-tabs{display:flex;flex-direction:column;gap:9px}.skill-tab{padding:14px 15px;text-align:left;border-radius:13px;border:1px solid var(--line);background:transparent;color:var(--muted);font-weight:600;font-size:.82rem;transition:.2s}.skill-tab.active,.skill-tab:hover{background:rgba(139,92,246,.15);border-color:rgba(196,181,253,.45);color:var(--text)}.skill-panel{min-height:300px}.skill-panel h3{font:600 1.35rem var(--heading);margin:0 0 8px}.skill-panel>p{color:var(--muted);font-size:.85rem;margin:0 0 22px}.skill-items{display:grid;grid-template-columns:1fr 1fr;gap:12px}.skill-item{border:1px solid var(--line);border-radius:14px;padding:14px;background:rgba(139,92,246,.045)}.skill-item-top{display:flex;justify-content:space-between;gap:10px;font-size:.8rem;font-weight:600}.skill-item small{color:var(--lav);font: .65rem 'Fira Code',monospace}.skill-track{height:4px;background:rgba(167,139,250,.13);border-radius:10px;margin-top:11px;overflow:hidden}.skill-track span{display:block;height:100%;width:var(--level);background:linear-gradient(90deg,var(--peri),var(--blue));border-radius:10px}
+.timeline{display:grid;grid-template-columns:1fr 1fr;gap:18px}.timeline-card{position:relative;padding-left:26px}.timeline-card:before{content:"";position:absolute;left:0;top:7px;width:9px;height:9px;background:var(--peri);border-radius:50%;box-shadow:0 0 15px var(--peri)}.timeline-card:after{content:"";position:absolute;left:4px;top:24px;bottom:25px;width:1px;background:var(--line)}.timeline-card .date{font: .7rem 'Fira Code',monospace;color:var(--lav)}.timeline-card h3{font:600 1.12rem var(--heading);margin:8px 0}.timeline-card p{color:var(--muted);font-size:.85rem;margin:0}.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:22px}.contact-intro p{color:var(--muted);font-size:.9rem}.contact-links{display:grid;gap:10px;margin-top:25px}.contact-link{display:flex;align-items:center;gap:13px;padding:13px 15px;border:1px solid var(--line);border-radius:14px;background:rgba(139,92,246,.045);transition:.2s}.contact-link:hover{transform:translateX(4px);border-color:var(--lav)}.link-icon{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:rgba(139,92,246,.15);color:var(--lav)}.contact-link b{display:block;font-size:.82rem}.contact-link small{display:block;color:var(--muted);font-size:.72rem;overflow-wrap:anywhere}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:.77rem;font-weight:600;color:var(--muted)}.field input,.field textarea{width:100%;padding:13px 14px;background:rgba(15,14,23,.35);color:var(--text);border:1px solid var(--line);border-radius:12px;outline:none;transition:.2s}body.light .field input,body.light .field textarea{background:rgba(255,255,255,.65)}.field input:focus,.field textarea:focus{border-color:var(--peri);box-shadow:0 0 0 3px rgba(139,92,246,.12)}.field textarea{min-height:130px;resize:vertical}.field input::placeholder,.field textarea::placeholder{color:var(--muted);opacity:.65}.form-feedback{font-size:.8rem;color:#a7f3d0;min-height:22px;margin-top:10px}.form-note{color:var(--muted);font-size:.7rem;margin:10px 0 0}footer{border-top:1px solid var(--line);padding:27px 0;color:var(--muted);font-size:.75rem}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}.footer-inner strong{color:var(--text)}.back-top{color:var(--lav)}
+.modal{position:fixed;inset:0;background:rgba(5,5,14,.76);backdrop-filter:blur(10px);z-index:100;display:none;place-items:center;padding:20px}.modal.open{display:grid}.modal-box{width:min(650px,100%);max-height:85vh;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:var(--shadow);animation:pop .25s ease}@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}.modal-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.modal-head h3{font:700 1.7rem var(--heading);margin:0 0 7px}.modal-close{flex:0 0 auto;width:36px;height:36px;border:1px solid var(--line);border-radius:11px;background:transparent;color:var(--text)}.modal-box p,.modal-box li{color:var(--muted);font-size:.9rem}.modal-box h4{font:600 1rem var(--heading);margin-bottom:4px}.modal-box ul{padding-left:20px}.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--surface);border:1px solid var(--line);padding:12px 18px;border-radius:13px;box-shadow:var(--shadow);font-size:.82rem;z-index:150;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}
+.reveal{opacity:0;transform:translateY(28px) scale(.985);filter:blur(2px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1),filter .65s ease;will-change:opacity,transform}.reveal.visible{opacity:1;transform:none;filter:none}.reveal-delay{transition-delay:.12s}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr .7fr;gap:25px}.hero h1{font-size:clamp(2.7rem,6vw,4.2rem)}.hero-art{transform:scale(.88)}.projects-grid{grid-template-columns:1fr 1fr}.project-card:last-child{grid-column:1/-1;min-height:320px}.about-grid{grid-template-columns:1fr}.skills-wrap{grid-template-columns:1fr}.skill-tabs{flex-direction:row;flex-wrap:wrap}.skill-tab{flex:1;min-width:150px}.contact-grid{grid-template-columns:1fr 1.2fr}}
+@media(max-width:680px){.container{width:min(100% - 30px,520px)}header{padding:11px 0}.menu-btn{display:grid}.nav-links{display:none;position:absolute;top:66px;left:15px;right:15px;padding:16px;background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{padding:12px;border-radius:10px}.nav-links a:hover{background:rgba(139,92,246,.1)}.hero{padding:125px 0 60px;min-height:auto}.hero-grid{grid-template-columns:1fr}.hero h1{font-size:clamp(2.7rem,12vw,4rem);letter-spacing:-1.8px}.hero-art{min-height:350px;transform:none;margin-top:0}.halo{width:265px;height:265px}.core-card{width:260px}.chip-one{right:0;top:30px}.chip-two{left:0;bottom:28px}.stats{gap:17px}.stat span{max-width:115px}section{padding:70px 0}.projects-grid{grid-template-columns:1fr}.project-card:last-child{grid-column:auto}.project-card{min-height:345px}.timeline,.contact-grid{grid-template-columns:1fr}.skill-items{grid-template-columns:1fr}.focus-list{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-head{margin-bottom:28px}.glass-card{padding:22px}.footer-inner{justify-content:center;text-align:center}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+
+/* Bluebell Code Garden: playful, programmer-first details */
+:root{--petal:#b9a2ff;--petal2:#d8ccff;--mint:#b8f3dc;--pink:#f2c8ff;--codegreen:#9cf6c7}
+body{background-image:radial-gradient(ellipse at 12% 8%,rgba(139,92,246,.2),transparent 34%),radial-gradient(ellipse at 83% 26%,rgba(59,130,246,.15),transparent 32%),radial-gradient(ellipse at 55% 95%,rgba(216,180,254,.11),transparent 36%),linear-gradient(135deg,rgba(20,17,39,.96),rgba(15,14,23,.98))}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.16;background-image:linear-gradient(rgba(196,181,253,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(196,181,253,.10) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,black,transparent 88%)}
+body.light:before{opacity:.2}
+.brand:before{content:"⌘";display:inline-grid;place-items:center;color:var(--mint);font-size:.9rem;margin-right:8px;border:1px solid var(--line);border-radius:8px;width:25px;height:25px;vertical-align:2px}
+.nav-links a{position:relative}.nav-links a:after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:2px;border-radius:4px;background:linear-gradient(90deg,var(--peri),var(--blue));transform:scaleX(0);transform-origin:left;transition:transform .25s}.nav-links a:hover:after,.nav-links a.active:after{transform:scaleX(1)}
+.btn,.icon-btn,.menu-btn,.skill-tab,.contact-link,.project-card{position:relative;overflow:hidden}.btn:before,.icon-btn:before,.skill-tab:before,.contact-link:before{content:"";position:absolute;inset:0;opacity:0;background:linear-gradient(110deg,transparent,rgba(255,255,255,.12),transparent);transform:translateX(-100%);transition:transform .55s,opacity .2s;pointer-events:none}.btn:hover:before,.icon-btn:hover:before,.skill-tab:hover:before,.contact-link:hover:before{opacity:1;transform:translateX(100%)}
+.project-card:after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(196,181,253,.14),transparent 40%);opacity:0;transition:opacity .25s}.project-card:hover:after{opacity:1}.project-card:active{transform:translateY(-3px) scale(.99)}
+.hero h1{ text-wrap:balance}.hero .eyebrow{box-shadow:0 0 25px rgba(139,92,246,.1)}
+.core-card{background:linear-gradient(145deg,rgba(53,42,91,.9),rgba(17,25,49,.88));border-color:rgba(196,181,253,.4);box-shadow:var(--shadow),0 0 0 6px rgba(139,92,246,.035),0 0 65px rgba(139,92,246,.2)}
+.avatar-symbol{position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(196,181,253,.25),rgba(59,130,246,.24));}
+.avatar-symbol img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;border-radius:inherit}
+.avatar-symbol.has-photo{color:transparent}
+.garden-label{font: .67rem 'Fira Code',monospace;color:var(--codegreen);margin-top:12px;display:flex;align-items:center;gap:7px}
+.garden-label:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--codegreen);box-shadow:0 0 12px var(--codegreen)}
+.petal-divider{display:flex;align-items:center;gap:10px;color:var(--lav);font-size:.9rem;margin:0 0 12px}
+.petal-divider:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,var(--line),transparent)}
+/* Floating little companions */
+.side-garden{position:fixed;z-index:20;bottom:24px;left:18px;display:flex;flex-direction:column;gap:12px;pointer-events:none}
+.pet-buddy{pointer-events:auto;position:relative;width:72px;height:72px;display:grid;place-items:center;border-radius:23px;border:1px solid rgba(196,181,253,.28);background:rgba(30,27,46,.68);backdrop-filter:blur(14px);box-shadow:0 12px 35px rgba(0,0,0,.2);cursor:pointer;transition:transform .25s,border-color .25s,box-shadow .25s;animation:petFloat 4.4s ease-in-out infinite}
+.pet-buddy:nth-child(2){animation-delay:-1.7s}.pet-buddy:hover{transform:translateY(-7px) rotate(-4deg) scale(1.06);border-color:var(--lav);box-shadow:0 0 28px rgba(139,92,246,.3)}
+.pet-buddy .pet-art{font-size:2.25rem;filter:drop-shadow(0 4px 8px rgba(196,181,253,.3));transition:transform .25s}.pet-buddy:hover .pet-art{transform:rotate(8deg) scale(1.13)}
+.pet-tip{position:absolute;left:82px;bottom:13px;white-space:nowrap;background:#211b3b;border:1px solid rgba(196,181,253,.25);color:#eee8ff;border-radius:10px;padding:7px 10px;font-size:.7rem;opacity:0;transform:translateX(-5px);transition:.2s;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.pet-buddy:hover .pet-tip,.pet-buddy:focus-visible .pet-tip{opacity:1;transform:none}
+.flower-float{position:fixed;z-index:0;pointer-events:none;color:var(--petal);font-size:1.3rem;opacity:.62;filter:drop-shadow(0 0 10px rgba(196,181,253,.35));animation:flowerDrift 9s ease-in-out infinite}
+.flower-float.f1{top:22%;right:3%;animation-delay:-2s}.flower-float.f2{top:67%;right:7%;font-size:1rem;animation-delay:-5s}.flower-float.f3{top:47%;left:2%;font-size:1.05rem;animation-delay:-7s}
+@keyframes petFloat{0%,100%{translate:0 0}50%{translate:0 -6px}}
+@keyframes flowerDrift{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-17px) rotate(12deg)}}
+.ripple{position:absolute;border-radius:50%;transform:scale(0);animation:ripple .6s ease-out;background:rgba(255,255,255,.28);pointer-events:none}
+@keyframes ripple{to{transform:scale(4);opacity:0}}
+#toast{max-width:calc(100vw - 30px);text-align:center}
+@media(max-width:900px){.side-garden{left:10px;bottom:12px;flex-direction:row}.pet-buddy{width:54px;height:54px;border-radius:18px}.pet-buddy .pet-art{font-size:1.8rem}.pet-tip{left:0;bottom:60px}.flower-float.f1{right:2%}}
+@media(max-width:680px){.side-garden{bottom:12px;left:10px;gap:8px}.pet-buddy{width:46px;height:46px;border-radius:15px}.pet-buddy .pet-art{font-size:1.5rem}.pet-tip{display:none}.flower-float{font-size:1rem}.hero-art{margin-bottom:15px}}
+@media(prefers-reduced-motion:reduce){.pet-buddy,.flower-float{animation:none}}
+
+
+/* Live Bluebell Meadow — ambient layered movement */
+.live-meadow{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;perspective:800px}
+.meadow-glow{position:absolute;border-radius:50%;filter:blur(65px);opacity:.2;mix-blend-mode:screen;animation:glowWander 19s ease-in-out infinite alternate}
+.meadow-glow.g1{width:360px;height:360px;top:4%;left:12%;background:#8b5cf6}
+.meadow-glow.g2{width:300px;height:300px;top:42%;right:4%;background:#3b82f6;animation-delay:-7s}
+.meadow-glow.g3{width:280px;height:280px;bottom:0;left:36%;background:#d8b4fe;animation-delay:-12s}
+@keyframes glowWander{0%{transform:translate3d(-20px,10px,0) scale(.9)}100%{transform:translate3d(60px,-45px,0) scale(1.18)}}
+.meadow-flower{position:absolute;left:var(--x);top:var(--y);font-size:var(--size);color:var(--color,#c4b5fd);opacity:var(--opacity,.45);filter:drop-shadow(0 0 12px rgba(196,181,253,.38));animation:flowerSway var(--duration,12s) ease-in-out infinite;animation-delay:var(--delay,0s);will-change:transform}
+@keyframes flowerSway{0%,100%{transform:translate3d(0,0,0) rotate(-14deg) scale(.92)}50%{transform:translate3d(var(--sway,18px),-34px,0) rotate(17deg) scale(1.1)}}
+.firefly{position:absolute;width:4px;height:4px;left:var(--x);top:var(--y);border-radius:50%;background:#d8ccff;box-shadow:0 0 10px 3px rgba(196,181,253,.55);opacity:.55;animation:fireflyDrift var(--duration,10s) ease-in-out infinite alternate;animation-delay:var(--delay,0s)}
+@keyframes fireflyDrift{0%{transform:translate(0,0);opacity:.12}45%{opacity:.8}100%{transform:translate(var(--dx,30px),var(--dy,-40px));opacity:.28}}
+/* Scroll-driven scenic reveal */
+.scroll-progress{position:fixed;top:0;left:0;width:100%;height:3px;z-index:100;background:rgba(196,181,253,.08)}
+.scroll-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#8b5cf6,#c4b5fd,#60a5fa);box-shadow:0 0 12px rgba(196,181,253,.75)}
+.section-head .kicker{display:inline-flex;align-items:center;gap:8px}
+.section-head .kicker:before{content:"✿";font-size:.8rem;color:var(--petal)}
+.reveal{transform:translateY(28px) scale(.985);filter:blur(3px)}
+.reveal.visible{filter:blur(0);transform:translateY(0) scale(1)}
+.project-card .project-visual{transition:background .35s,transform .35s}
+.project-card:hover .project-visual{transform:scale(1.025)}
+.project-card:hover .visual-icon{animation:iconPop .55s cubic-bezier(.2,.8,.2,1)}
+@keyframes iconPop{0%{transform:scale(.8) rotate(-8deg)}55%{transform:scale(1.22) rotate(8deg)}100%{transform:scale(1)}}
+.pet-buddy{overflow:visible}
+.pet-buddy .pet-task{position:absolute;left:82px;top:0;width:190px;white-space:normal;text-align:left;background:rgba(31,25,59,.96);border:1px solid rgba(196,181,253,.28);color:#f3efff;border-radius:13px;padding:10px 12px;font-size:.68rem;line-height:1.5;opacity:0;transform:translateX(-6px) scale(.97);pointer-events:none;transition:.25s;box-shadow:0 12px 35px rgba(0,0,0,.25)}
+.pet-buddy.task-open .pet-task,.pet-buddy:focus-visible .pet-task{opacity:1;transform:none}
+.pet-task strong{display:block;color:#c4b5fd;font-size:.72rem;margin-bottom:3px}
+.pet-task .task-state{display:block;margin-top:6px;color:#a7f3d0;font-family:'Fira Code',monospace;font-size:.62rem}
+.pet-buddy.task-done{border-color:#a7f3d0;box-shadow:0 0 24px rgba(167,243,208,.18)}
+.pet-buddy.task-done .pet-art{filter:drop-shadow(0 0 10px rgba(167,243,208,.5))}
+.pet-buddy.walking{z-index:3}
+.pet-buddy.walking .pet-art{animation:buddyHop .36s ease-in-out infinite alternate}
+@keyframes buddyHop{to{transform:translateY(-5px) rotate(12deg) scale(1.12)}}
+.pet-task .pet-greeting{display:block;color:#dbeafe;font-weight:700;margin:4px 0}
+.pet-task .pet-info{display:block;color:#e2eaff}
+.pet-task .task-state{font-weight:500}
+.task-bar{height:3px;background:rgba(196,181,253,.16);border-radius:4px;overflow:hidden;margin-top:7px}
+.task-bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,#a78bfa,#a7f3d0);transition:width .5s}
+.garden-mission{display:inline-flex;align-items:center;gap:7px;color:var(--muted);font-size:.72rem;margin-top:15px}
+.garden-mission i{width:7px;height:7px;background:#a7f3d0;border-radius:50%;box-shadow:0 0 9px #a7f3d0}
+@media(max-width:680px){.pet-buddy .pet-task{left:0;top:auto;bottom:56px;width:175px}.meadow-flower{font-size:calc(var(--size)*.8)}.meadow-glow{opacity:.13}}
+@media(prefers-reduced-motion:reduce){.meadow-flower,.firefly,.meadow-glow{animation:none!important}.reveal{filter:none;transform:none;opacity:1}}
+
+/* Blueberry tones and pointer-led bluebell interactions */
+:root{--bg:#0b1024;--surface:#121b38;--glass:rgba(17,27,58,.74);--lav:#c8d7ff;--peri:#637cf4;--blue:#4285f4;--petal:#abc6ff;--berry:#3157c8;--text:#f4f7ff;--muted:#aebbd9;--line:rgba(168,194,255,.19)}
+body{background:radial-gradient(ellipse at 10% 0%,rgba(80,108,232,.18),transparent 38%),radial-gradient(ellipse at 90% 35%,rgba(59,130,246,.14),transparent 32%),var(--bg)}
+body.light{--bg:#f3f6ff;--surface:#fff;--glass:rgba(255,255,255,.8);--text:#17213e;--muted:#596785;--line:rgba(74,106,195,.2);--petal:#5277df;background:radial-gradient(ellipse at 10% 0%,rgba(111,145,255,.18),transparent 38%),#f3f6ff}
+.gradient-text{background-image:linear-gradient(105deg,#dbeafe 0%,#a5b4fc 42%,#75caff 100%)}
+.btn-primary{background:linear-gradient(110deg,#6477f3,#456be2 55%,#359fe1)}
+.tag{color:#c5d4ff;background:rgba(79,111,220,.13);border-color:rgba(125,158,255,.25)}
+.garden-label{color:#9fc6ff}
+.garden-label:before{background:#75a8ff;box-shadow:0 0 12px #75a8ff}
+.core-card{background:linear-gradient(145deg,rgba(34,50,100,.94),rgba(13,25,57,.92));border-color:rgba(156,184,255,.4);box-shadow:var(--shadow),0 0 0 6px rgba(67,108,225,.06),0 0 65px rgba(67,108,225,.2)}
+body.light .core-card{background:linear-gradient(145deg,rgba(255,255,255,.97),rgba(220,231,255,.94))}
+.avatar-symbol{background:linear-gradient(135deg,rgba(151,178,255,.28),rgba(59,130,246,.25));border-color:rgba(156,184,255,.38);box-shadow:0 0 40px rgba(67,108,225,.22)}
+.cursor-bouquet{position:fixed;left:0;top:0;width:92px;height:92px;z-index:80;pointer-events:none;opacity:0;will-change:transform;transition:opacity .2s ease}
+.cursor-bouquet.is-visible{opacity:1}
+.cursor-bouquet svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 5px 12px rgba(57,94,208,.34))}
+.cursor-petal{position:fixed;left:0;top:0;z-index:79;pointer-events:none;color:#9bb9ff;font-size:var(--petal-size,1rem);text-shadow:0 0 12px rgba(126,164,255,.85);animation:petalTrail .85s ease-out forwards}
+@keyframes petalTrail{0%{opacity:.95;transform:translate3d(0,0,0) scale(.65) rotate(0)}100%{opacity:0;transform:translate3d(var(--petal-dx),-36px,0) scale(1.35) rotate(90deg)}}
+.magic-particle{position:fixed;left:0;top:0;z-index:110;pointer-events:none;will-change:transform,opacity}
+.magic-flower{color:#b4ccff;font-size:var(--magic-size);text-shadow:0 0 14px rgba(134,171,255,.9);animation:flowerBurst .95s cubic-bezier(.16,.8,.3,1) forwards}
+.magic-berry{width:var(--berry-size);height:var(--berry-size);border-radius:50%;background:radial-gradient(circle at 30% 25%,#a9c7ff 0 8%,#547ce9 24%,#263e9d 100%);box-shadow:0 0 15px rgba(82,124,233,.7),inset -2px -3px 5px rgba(13,22,73,.45);animation:berryBurst .9s cubic-bezier(.16,.8,.3,1) forwards}
+@keyframes flowerBurst{0%{opacity:0;transform:translate3d(0,0,0) scale(.2) rotate(0)}14%{opacity:1;transform:translate3d(0,0,0) scale(1.35) rotate(18deg)}100%{opacity:0;transform:translate3d(var(--burst-x),var(--burst-y),0) scale(.55) rotate(var(--burst-rotate))}}
+@keyframes berryBurst{0%{opacity:0;transform:translate3d(0,0,0) scale(.2)}18%{opacity:1;transform:translate3d(0,0,0) scale(1.25)}100%{opacity:0;transform:translate3d(var(--burst-x),var(--burst-y),0) scale(.45)}}
+.top-garden-trail{position:fixed;left:0;top:0;z-index:112;pointer-events:none;will-change:transform,opacity;animation:topTrailDrift .85s ease-out forwards}
+.top-trail-flower{color:#d2e2ff;font-size:var(--trail-size);text-shadow:0 0 12px #80aaff,0 0 24px rgba(131,169,255,.75)}
+.top-trail-berry{width:var(--trail-size);height:var(--trail-size);border-radius:50%;background:radial-gradient(circle at 30% 24%,#d6e8ff 0 7%,#78a2ff 22%,#3d5fd0 64%,#233986 100%);box-shadow:0 0 15px rgba(91,137,255,.8),inset -2px -3px 5px rgba(13,22,73,.45)}
+@keyframes topTrailDrift{0%{opacity:0;transform:translate(-50%,-50%) scale(.35) rotate(-18deg)}18%{opacity:1;transform:translate(-50%,-50%) scale(1.2) rotate(10deg)}100%{opacity:0;transform:translate(calc(-50% + var(--trail-dx)),calc(-50% - 36px)) scale(.62) rotate(var(--trail-rotate))}}
+.btn,.icon-btn,.menu-btn,.skill-tab,.contact-link{transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s,border-color .28s,background-color .28s}
+.btn:hover,.icon-btn:hover,.menu-btn:hover,.skill-tab:hover,.contact-link:hover{box-shadow:0 10px 30px rgba(71,107,220,.2)}
+.btn:active,.icon-btn:active,.menu-btn:active,.skill-tab:active{transform:translateY(1px) scale(.96)}
+@media(max-width:680px){.cursor-bouquet,.cursor-petal{display:none}}
+@media(prefers-reduced-motion:reduce){.cursor-bouquet,.cursor-petal{display:none!important}}
+@media(prefers-reduced-motion:reduce){.magic-particle{display:none!important}}
+.scroll-top{position:fixed;right:24px;bottom:24px;z-index:60;width:54px;height:54px;border:1px solid rgba(168,194,255,.36);border-radius:19px;background:linear-gradient(145deg,rgba(73,103,208,.94),rgba(38,57,139,.96));color:#f5f8ff;box-shadow:0 10px 30px rgba(30,55,145,.34);display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(16px) scale(.86);transition:opacity .3s,transform .35s cubic-bezier(.2,.8,.2,1),visibility .3s,border-color .3s,box-shadow .3s;cursor:pointer}
+.scroll-top.visible{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
+.scroll-top:hover{transform:translateY(-5px) scale(1.07);border-color:#d6e4ff;box-shadow:0 14px 34px rgba(66,110,231,.48)}
+.scroll-top:active{transform:translateY(0) scale(.94)}
+.scroll-top-arrow{font-size:1.55rem;line-height:1;font-weight:700}
+.scroll-top-flower{position:absolute;right:-5px;top:-8px;font-size:.88rem;color:#dce8ff;text-shadow:0 0 10px #80aaff;transition:transform .3s}
+.scroll-top:hover .scroll-top-flower{transform:rotate(35deg) scale(1.35)}
+.about-card,.focus-item,.timeline-card,.skill-panel,.skill-item,.contact-intro,#contactForm{position:relative;transition:transform .32s cubic-bezier(.2,.75,.25,1),border-color .32s,box-shadow .32s,background-color .32s}
+.about-card:hover,.about-card:focus-within,.focus-item:hover,.focus-item:focus-within,.timeline-card:hover,.timeline-card:focus-within,.skill-panel:hover,.skill-panel:focus-within,.skill-item:hover,.skill-item:focus-within,.contact-intro:hover,.contact-intro:focus-within,#contactForm:hover,#contactForm:focus-within{transform:translateY(-5px);border-color:rgba(151,184,255,.55);box-shadow:0 18px 42px rgba(41,75,171,.2),0 0 24px rgba(97,139,242,.09)}
+.timeline-card:before{transition:transform .3s,box-shadow .3s,background-color .3s}
+.timeline-card:hover:before,.timeline-card:focus-within:before{transform:scale(1.65);background:#c6d9ff;box-shadow:0 0 8px #a8c6ff,0 0 22px rgba(112,157,255,.9)}
+.timeline-card:after{transition:background-color .3s,box-shadow .3s}
+.timeline-card:hover:after,.timeline-card:focus-within:after{background:rgba(151,184,255,.55);box-shadow:0 0 10px rgba(112,157,255,.35)}
+.focus-icon{transition:transform .3s cubic-bezier(.2,.8,.2,1),filter .3s}
+.focus-item:hover .focus-icon,.focus-item:focus-within .focus-icon{transform:translateY(-3px) rotate(-9deg) scale(1.18);filter:drop-shadow(0 0 9px rgba(151,184,255,.65))}
+.skill-item:hover .skill-track span,.skill-item:focus-within .skill-track span{filter:brightness(1.3);box-shadow:0 0 10px rgba(103,149,255,.65)}
+.skill-track span{transition:filter .3s,box-shadow .3s}
+.tag{transition:transform .22s,border-color .22s,background-color .22s,box-shadow .22s}
+.tag:hover{transform:translateY(-2px);border-color:rgba(165,195,255,.58);background:rgba(79,111,220,.23);box-shadow:0 5px 15px rgba(56,91,191,.16)}
+.section-head.visible .kicker:before{animation:sectionBloom .65s cubic-bezier(.2,.8,.2,1) both}
+@keyframes sectionBloom{0%{transform:scale(.3) rotate(-35deg);opacity:.25}65%{transform:scale(1.45) rotate(18deg)}100%{transform:scale(1) rotate(0);opacity:1}}
+body.scrolling-up .reveal:not(.visible){transform:translateY(-28px) scale(.985)}
+@media(max-width:680px){.scroll-top{right:14px;bottom:76px;width:48px;height:48px;border-radius:16px}}
+@media(prefers-reduced-motion:reduce){.scroll-top{transition:none}.section-head.visible .kicker:before{animation:none}.reveal{filter:none;transform:none;opacity:1}.about-card,.focus-item,.timeline-card,.skill-panel,.skill-item,.contact-intro,#contactForm,.tag,.focus-icon,.timeline-card:before,.timeline-card:after,.skill-track span{transition:none!important}.about-card:hover,.about-card:focus-within,.focus-item:hover,.focus-item:focus-within,.timeline-card:hover,.timeline-card:focus-within,.skill-panel:hover,.skill-panel:focus-within,.skill-item:hover,.skill-item:focus-within,.contact-intro:hover,.contact-intro:focus-within,#contactForm:hover,#contactForm:focus-within,.tag:hover{transform:none}}
+:root{--bg:#12101a;--surface:#1b1927;--glass:rgba(32,28,48,.68);--blue:#7969b4;--line:rgba(196,181,253,.16)}
+body{background:radial-gradient(ellipse at 10% 0%,rgba(139,92,246,.13),transparent 38%),radial-gradient(ellipse at 90% 35%,rgba(132,104,199,.075),transparent 32%),var(--bg)}
+body.light{--bg:#f1e9f8;--surface:#faf6ff;--glass:rgba(250,246,255,.84);--text:#282039;--muted:#655a77;--line:rgba(119,95,160,.2);--shadow:0 22px 70px rgba(71,52,103,.13);--lav:#9278c2;--peri:#7959b3;--blue:#8574b6;background:radial-gradient(ellipse at 10% 0%,rgba(182,151,218,.24),transparent 38%),radial-gradient(ellipse at 90% 35%,rgba(178,151,212,.16),transparent 32%),#f1e9f8}
+body:not(.light) .gradient-text{background-image:linear-gradient(105deg,#e9d5ff 0%,#c4b5fd 55%,#ada3e8 100%)}
+body.light .gradient-text{background-image:linear-gradient(105deg,#8666b5 0%,#765db0 55%,#7067ad 100%)}
+body.light header.scrolled{background:rgba(241,233,248,.91)}
+.hero{min-height:100vh;padding:112px 0 65px}
+.hero-grid{grid-template-columns:minmax(0,1fr);gap:0}
+.hero-art{min-height:300px;width:min(100%,520px);margin:0 auto}
+.hero-art .halo{width:280px;height:280px}
+.core-card{width:min(280px,80vw)}
+.chip-one{right:5%;top:10%}
+.chip-two{left:5%;bottom:9%}
+.hero-copy{text-align:center}
+.hero .eyebrow{margin:0 auto}
+.hero h1{max-width:960px;margin:24px auto 20px}
+.hero p{max-width:780px;margin:0 auto}
+.hero-actions,.stats{justify-content:center}
+.stat{text-align:left}
+.hero .garden-mission{width:fit-content;margin:20px auto 0}
+#about .section-head,#projects .section-head{margin-left:auto;margin-right:auto;text-align:center}
+.projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.project-card{display:block;min-height:0;padding:0;perspective:1200px}
+.project-card:last-child{grid-column:auto;min-height:0}
+.project-card:hover .project-visual{transform:none}
+.project-flip{position:relative;min-height:590px;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.project-card:hover .project-flip,.project-card:focus-visible .project-flip{transform:rotateY(180deg)}
+.project-face{position:absolute;inset:0;display:flex;flex-direction:column;padding:22px;backface-visibility:hidden;border-radius:inherit}
+.project-front{background:linear-gradient(145deg,rgba(37,33,55,.96),rgba(27,28,45,.96))}
+.project-back{transform:rotateY(180deg);background:linear-gradient(145deg,rgba(42,36,63,.98),rgba(27,30,48,.98))}
+body.light .project-front{background:linear-gradient(145deg,#faf6ff,#f0e8f8)}
+body.light .project-back{background:linear-gradient(145deg,#e9def4,#f4edf9)}
+.project-face .project-visual{flex:none;width:100%;height:280px;margin-bottom:18px}
+.project-visual img{display:block;width:100%;height:100%;min-width:0;min-height:0;max-width:100%;max-height:100%;object-fit:contain}
+.project-visual-iseek{background:#a9d6f4;border-color:rgba(37,107,183,.38);box-shadow:inset 0 0 0 1px rgba(255,255,255,.4),0 8px 22px rgba(37,107,183,.18)}
+.project-visual-iseek{height:280px}
+.project-visual-iseek img{object-position:center;background:#a9d6f4}
+.project-visual-logo{background:#fff1df;border-color:rgba(112,73,43,.26);box-shadow:inset 0 0 0 1px rgba(255,255,255,.65),0 8px 22px rgba(90,62,39,.18)}
+.project-visual-logo img{object-fit:contain}
+.project-visual-icctskolar{background:#f6f7fb;border-color:rgba(24,91,176,.22)}
+.project-visual-icctskolar img{object-position:center}
+.project-face h3{font:600 1.3rem/1.2 var(--heading);margin:0 0 10px}
+.project-face p{margin:0 0 14px}
+.project-face .tag-list{margin-top:auto;padding-top:10px}
+.project-flip-hint{display:block;margin-top:12px;color:var(--muted);font:500 .65rem 'Fira Code',monospace}
+.project-back-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.project-back-icon{font-size:1.5rem;color:var(--lav)}
+.project-back ul{padding-left:19px;margin:0;color:var(--muted);font-size:.82rem}
+.project-back li{margin:7px 0}
+.project-card:focus-visible{outline:2px solid var(--peri);outline-offset:4px}
+.tools-panel{margin-top:20px}
+.tools-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.tools-heading h3{font:600 1.3rem var(--heading);margin:7px 0 0}
+.tools-heading>span{font-size:1.6rem;color:var(--lav)}
+.tool-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.tool-group{border:1px solid var(--line);border-radius:15px;padding:15px;background:rgba(139,92,246,.045)}
+.tool-group h4{font:600 .79rem var(--heading);margin:0 0 12px}
+.tool-list{display:flex;flex-wrap:wrap;gap:8px}
+.tool-chip{display:inline-flex;align-items:center;gap:8px;min-height:34px;padding:6px 11px;border-radius:99px;border:1px solid var(--line);background:var(--glass);color:var(--muted);font-size:.73rem;font-weight:600}
+.tool-icon{width:17px;height:17px;object-fit:contain;flex:none}
+body.light .tool-group{background:rgba(126,88,172,.07)}
+body.light .tool-chip{color:#514365}
+.cursor-bouquet{width:34px;height:34px}
+.cursor-bouquet svg{filter:drop-shadow(0 2px 5px rgba(57,94,208,.3))}
+.cursor-petal{text-shadow:0 0 6px rgba(126,164,255,.65)}
+@media(max-width:680px){.projects-grid{grid-template-columns:1fr}.project-flip{min-height:590px}.hero{padding-top:105px}.hero-art{min-height:275px}.hero-art .halo{width:245px;height:245px}}
+@media(max-width:680px){.tool-groups{grid-template-columns:1fr}.tools-panel{padding:20px}}
+@media(prefers-reduced-motion:reduce){.project-flip{transition:none}}
+.pet-buddy{--buddy-accent:#9dbaff;--buddy-glow:rgba(93,133,245,.26);grid-template-rows:1fr auto;gap:0;padding:5px 4px 7px;background:radial-gradient(circle at 50% 28%,var(--buddy-glow),transparent 60%),rgba(19,28,58,.84);border-color:color-mix(in srgb,var(--buddy-accent) 40%,transparent);box-shadow:0 10px 30px rgba(10,18,48,.28),inset 0 1px rgba(255,255,255,.1)}
+.pet-buddy[data-pet="chewy"]{--buddy-accent:#ffc2e6;--buddy-glow:rgba(226,126,194,.24);background:radial-gradient(circle at 50% 28%,var(--buddy-glow),transparent 60%),rgba(37,25,58,.84)}
+.pet-buddy:hover,.pet-buddy:focus-visible{transform:translateY(-7px) rotate(-3deg) scale(1.08);border-color:var(--buddy-accent);box-shadow:0 0 28px var(--buddy-glow),0 12px 32px rgba(10,18,48,.3)}
+.pet-buddy .pet-art{align-self:end;font-size:2.05rem;line-height:1;filter:drop-shadow(0 4px 8px var(--buddy-glow));transform-origin:50% 85%}
+.pet-buddy:hover .pet-art,.pet-buddy:focus-visible .pet-art{animation:buddyPeek .55s cubic-bezier(.2,.8,.2,1)}
+.pet-buddy[data-pet="chewy"]:hover .pet-art,.pet-buddy[data-pet="chewy"]:focus-visible .pet-art{animation:chewyHop .55s cubic-bezier(.2,.8,.2,1)}
+.pet-name{font:700 .53rem/1.2 'Fira Code',monospace;letter-spacing:.16em;color:var(--buddy-accent);text-shadow:0 0 12px var(--buddy-glow)}
+@keyframes buddyPeek{0%,100%{transform:rotate(0) scale(1)}30%{transform:rotate(-12deg) scale(1.15)}65%{transform:rotate(10deg) scale(1.13)}}
+@keyframes chewyHop{0%,100%{transform:translateY(0) scale(1)}35%{transform:translateY(-8px) scale(1.12)}65%{transform:translateY(1px) scale(.96)}}
+.pet-tip{border-color:color-mix(in srgb,var(--buddy-accent) 42%,transparent);background:rgba(18,26,55,.97)}
+.pet-buddy .pet-task{left:84px;top:50%;width:218px;padding:13px 14px;border-radius:16px;border-color:color-mix(in srgb,var(--buddy-accent) 38%,transparent);background:linear-gradient(145deg,rgba(25,34,70,.98),rgba(23,23,50,.97));box-shadow:0 18px 42px rgba(5,10,30,.35),0 0 22px var(--buddy-glow);transform:translate(-6px,-50%) scale(.97)}
+.pet-buddy.task-open .pet-task,.pet-buddy:hover .pet-task,.pet-buddy:focus-visible .pet-task{opacity:1;transform:translate(0,-50%) scale(1)}
+.pet-buddy .pet-task:before{content:"";position:absolute;left:-6px;top:22px;width:10px;height:10px;transform:rotate(45deg);background:#192246;border-left:1px solid color-mix(in srgb,var(--buddy-accent) 38%,transparent);border-bottom:1px solid color-mix(in srgb,var(--buddy-accent) 38%,transparent)}
+.pet-task strong{color:var(--buddy-accent);font-size:.76rem;letter-spacing:.02em}
+.pet-task .pet-greeting{color:#fff;font-size:.72rem}
+.pet-task .pet-info{font-size:.68rem;line-height:1.6}
+.pet-task .task-state{color:var(--buddy-accent)}
+.task-bar span{background:linear-gradient(90deg,var(--buddy-accent),#b8f3dc)}
+.pet-buddy.task-done{border-color:var(--buddy-accent);box-shadow:0 0 25px var(--buddy-glow)}
+@media(max-width:900px){.pet-buddy .pet-task{left:0;top:auto;bottom:64px;transform:translateY(6px) scale(.97)}.pet-buddy.task-open .pet-task,.pet-buddy:hover .pet-task,.pet-buddy:focus-visible .pet-task{transform:translateY(0) scale(1)}.pet-buddy .pet-task:before{left:20px;top:auto;bottom:-6px;border:0;border-right:1px solid color-mix(in srgb,var(--buddy-accent) 38%,transparent);border-bottom:1px solid color-mix(in srgb,var(--buddy-accent) 38%,transparent)}}
+@media(max-width:680px){.pet-buddy{padding:3px 2px 5px}.pet-buddy .pet-art{font-size:1.35rem}.pet-name{font-size:.45rem}.pet-buddy .pet-task{display:block;left:0;bottom:56px;width:min(205px,calc(100vw - 30px))}}
+@media(prefers-reduced-motion:reduce){.pet-buddy:hover .pet-art,.pet-buddy:focus-visible .pet-art{animation:none}}
+body.light{--bg:#f3f1ff;--surface:#fff;--glass:rgba(255,255,255,.88);--text:#211b38;--muted:#505875;--lav:#58428f;--peri:#6049b0;--blue:#315f9c;--petal:#684ea8;--codegreen:#286d4e;--mint:#287b58;--pink:#985e91;--line:rgba(88,66,143,.2);background:radial-gradient(ellipse at 10% 0%,rgba(177,154,235,.2),transparent 38%),radial-gradient(ellipse at 90% 35%,rgba(153,178,238,.12),transparent 32%),#f3f1ff}
+body.light .gradient-text{background-image:linear-gradient(105deg,#563687 0%,#51449a 52%,#245b86 100%)}
+body.light .tag{color:#49367f;background:rgba(99,76,180,.1);border-color:rgba(88,66,143,.24)}
+body.light .garden-label{color:#286747}
+body.light .garden-label:before{background:#31815d;box-shadow:0 0 9px rgba(49,129,93,.35)}
+body.light .code-lines span{color:#59438c}
+body.light .eyebrow{background:rgba(255,255,255,.82)}
+body.light .field input::placeholder,body.light .field textarea::placeholder{color:#505875;opacity:1}
+body.light .form-feedback{color:#286747}
+:where(a,button,input,textarea,[tabindex]):focus-visible{outline:3px solid var(--peri);outline-offset:3px}
+.core-card{isolation:isolate;overflow:hidden;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .35s,box-shadow .35s}
+.core-card:before{content:"";position:absolute;inset:-45%;z-index:-1;pointer-events:none;background:radial-gradient(circle at 70% 30%,rgba(126,164,255,.25),transparent 35%),linear-gradient(120deg,transparent 35%,rgba(218,231,255,.11) 50%,transparent 65%);opacity:0;transform:translateX(-18%) rotate(8deg);transition:opacity .4s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.core-card:hover,.core-card:focus{transform:rotate(0) translateY(-8px) scale(1.025);border-color:rgba(175,199,255,.72);box-shadow:var(--shadow),0 0 0 5px rgba(99,124,244,.12),0 18px 65px rgba(67,108,225,.3)}
+.core-card:hover:before,.core-card:focus:before{opacity:1;transform:translateX(12%) rotate(8deg)}
+.core-card:focus-visible{outline:2px solid var(--lav);outline-offset:5px}
+.card-top .profile-id{color:var(--lav);font-weight:500;letter-spacing:.08em;transition:letter-spacing .35s,color .35s}
+.core-card:hover .profile-id,.core-card:focus .profile-id{letter-spacing:.14em;color:var(--text)}
+.mini-dots i{transition:transform .3s,box-shadow .3s}
+.core-card:hover .mini-dots i,.core-card:focus .mini-dots i{transform:scale(1.35);box-shadow:0 0 10px currentColor}
+.avatar-symbol{overflow:hidden;transition:transform .4s cubic-bezier(.2,.8,.2,1),border-radius .4s,box-shadow .4s}
+.avatar-symbol img{transition:transform .55s cubic-bezier(.2,.8,.2,1),filter .4s}
+.core-card:hover .avatar-symbol,.core-card:focus .avatar-symbol{transform:translateY(-3px) rotate(-4deg);border-radius:38px;box-shadow:0 0 35px rgba(99,124,244,.38)}
+.core-card:hover .avatar-symbol img,.core-card:focus .avatar-symbol img{transform:scale(1.08);filter:saturate(1.12)}
+.garden-label{position:relative;min-height:1.4em}
+.profile-hover-message{position:absolute;inset:0;opacity:0;transform:translateY(5px);transition:opacity .25s,transform .25s}
+.core-card:hover .profile-hover-message,.core-card:focus .profile-hover-message{opacity:1;transform:none}
+.core-card:hover .profile-default-message,.core-card:focus .profile-default-message{opacity:0;transform:translateY(-5px);transition:opacity .2s,transform .2s}
+.profile-default-message{transition:opacity .2s,transform .2s}
+.code-lines div{transition:color .3s,transform .3s}
+.core-card:hover .code-lines div,.core-card:focus .code-lines div{color:var(--text);transform:translateX(3px)}
+.core-card:hover .code-lines div:nth-child(2),.core-card:focus .code-lines div:nth-child(2){transition-delay:.04s}
+.core-card:hover .code-lines div:nth-child(3),.core-card:focus .code-lines div:nth-child(3){transition-delay:.08s}
+@media(prefers-reduced-motion:reduce){.core-card:before{transition:none}.avatar-symbol,.avatar-symbol img,.profile-hover-message,.profile-default-message,.code-lines div,.mini-dots i,.card-top .profile-id{transition:none}}
+</style>
+</head>
+<body>
+<div class="ambient" aria-hidden="true"><div class="orb"></div><div class="orb"></div><div class="orb"></div></div>
+<canvas id="particles" aria-hidden="true"></canvas>
+<div class="cursor-bouquet" id="cursorBouquet" aria-hidden="true">
+  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M48 87C48 68 42 55 31 44M49 86C51 66 60 51 72 39M48 85C47 69 49 56 51 48" stroke="#75a975" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M46 71C37 62 30 64 28 70C34 76 41 76 46 71ZM54 68C62 58 70 60 72 66C66 73 59 73 54 68Z" fill="#78a978"/>
+    <path d="M50 79C58 77 67 75 74 73" stroke="#75a975" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="71" cy="78" r="5" fill="#3157c8" stroke="#a8c0ff" stroke-width="1.2"/><circle cx="79" cy="74" r="5" fill="#4266dc" stroke="#b7ccff" stroke-width="1.2"/><circle cx="81" cy="83" r="5" fill="#263f9e" stroke="#a8c0ff" stroke-width="1.2"/>
+    <path d="M69 72Q71 69 74 72M77 68Q79 65 82 68M79 77Q82 74 84 77" stroke="#9bc28b" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M31 43C23 43 18 48 20 54C22 61 28 63 33 60C38 57 38 49 31 43Z" fill="#8eb6ff" stroke="#d7e5ff" stroke-width="1.6"/>
+    <path d="M72 38C64 38 60 43 62 49C64 56 70 58 75 55C80 52 79 44 72 38Z" fill="#789cf1" stroke="#d7e5ff" stroke-width="1.6"/>
+    <path d="M51 47C43 47 39 52 41 58C43 65 49 67 54 64C59 61 58 53 51 47Z" fill="#a5c7ff" stroke="#e1ebff" stroke-width="1.6"/>
+    <path d="M25 55Q27 58 30 57M67 50Q69 53 72 52M46 59Q48 62 51 61" stroke="#eef4ff" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="19" cy="44" r="2" fill="#c8d7ff"/><circle cx="80" cy="35" r="2.5" fill="#c8d7ff"/><circle cx="59" cy="42" r="1.8" fill="#c8d7ff"/>
+  </svg>
+</div>
+<div class="live-meadow" id="liveMeadow" aria-hidden="true">
+  <div class="meadow-glow g1"></div><div class="meadow-glow g2"></div><div class="meadow-glow g3"></div>
+</div>
+<div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+<div class="flower-float f1" aria-hidden="true">✿</div><div class="flower-float f2" aria-hidden="true">❀</div><div class="flower-float f3" aria-hidden="true">✾</div>
+<aside class="side-garden" aria-label="Cute coding companions">
+  <button class="pet-buddy" type="button" data-pet="wonu" aria-label="Meet Wonu, the curious cat, and explore selected projects"><span class="pet-art" aria-hidden="true">🐈‍⬛</span><span class="pet-name" aria-hidden="true">WONU</span><span class="pet-tip">Wonu the project scout — tap for a tour!</span><span class="pet-task"><strong>🐾 Wonu's project scout report</strong><span class="pet-greeting">Psst... Wonu found something worth a look!</span><span class="pet-info">Follow this curious cat to explore Juvilete's design work, assistive-tech concepts, and research projects.</span><span class="task-state">MISSION: projects await</span><span class="task-bar"><span></span></span></span></button>
+  <button class="pet-buddy" type="button" data-pet="chewy" aria-label="Meet Chewy, the cheerful bunny, and explore design and technical skills"><span class="pet-art" aria-hidden="true">🐇</span><span class="pet-name" aria-hidden="true">CHEWY</span><span class="pet-tip">Chewy the skills courier — tap for a tour!</span><span class="pet-task"><strong>🌸 Chewy's skill garden delivery</strong><span class="pet-greeting">Hop aboard! Chewy brought you a little guide.</span><span class="pet-info">Explore Juvilete's UI/UX design, technical documentation, networking, and teamwork skills.</span><span class="task-state">MISSION: skills are blooming</span><span class="task-bar"><span></span></span></span></button>
+</aside>
+<header id="header"><div class="container nav">
+<a class="brand" href="#home" aria-label="Juvilete.dev home">Juvilete<span>.dev</span><i class="brand-dot"></i></a>
+<nav class="nav-links" id="navLinks" aria-label="Main navigation"><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#journey">Experience / Education</a><a href="#contact">Contact</a></nav>
+<div class="nav-actions"><button class="icon-btn" id="themeToggle" aria-label="Toggle light and dark theme" title="Toggle theme">☼</button><button class="icon-btn" id="soundToggle" type="button" aria-label="Turn portfolio sounds off" aria-pressed="true" title="Turn sounds off">♫</button><button class="menu-btn" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button></div>
+</div></header>
+<main>
+<section class="hero" id="home"><div class="container hero-grid">
+<div class="hero-art" aria-label="Decorative profile card for Juvilete">
+<div class="halo"></div><div class="float-chip chip-one">✦ <b>Design minded</b></div><div class="float-chip chip-two">⌘ <b>Systems thinker</b></div>
+<div class="core-card" tabindex="0" aria-label="Interactive profile card for Juvilete Catungal">
+<div class="card-top"><span class="profile-id">JUVI.EXE // DESIGNER MODE</span><span class="mini-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+<div class="avatar-symbol has-photo" id="avatarSymbol"><img src="assets/juvilete-profile-new.jpg" alt="Juvilete smiling in a white collared blouse"></div>
+<h3>Juvilete Catungal</h3><p>UI/UX Design × Computer Engineering</p>
+<div class="garden-label"><span class="profile-default-message">designing with curiosity</span><span class="profile-hover-message" aria-hidden="true">✦ creative mode: activated</span></div>
+<div class="code-lines"><div><span>const</span> mindset = "curious";</div><div><span>let</span> ideas = build("better");</div><div><span>return</span> meaningfulSolutions;</div></div>
+</div>
+</div>
+<div class="hero-copy">
+<div class="eyebrow"><i></i> AVAILABLE FOR COLLABORATION · BLUEBERRY GARDEN</div>
+<h1>Crafting Intuitive Interfaces <span class="gradient-text">&amp; Architecting Connected Systems.</span></h1>
+<p>I'm <strong>Juvilete A. Catungal</strong> — a UI/UX designer who enjoys turning user needs into clear, thoughtful digital experiences. I bring together interface design, technical documentation, and a Computer Engineering background to make ideas easier to understand and use.</p>
+<div class="hero-actions"><a class="btn btn-primary" href="#projects">Explore Projects <span>↗</span></a><a class="btn btn-glass" href="#contact">Get in Touch <span>→</span></a></div>
+<div class="stats"><div class="stat"><b>4th year</b><span>Computer Engineering studies</span></div><div class="stat"><b>Human-first</b><span>UI/UX design approach</span></div><div class="stat"><b>Detail-minded</b><span>Design &amp; documentation</span></div></div><div class="garden-mission"><i></i> Tiny companions have side quests — click them to help.</div>
+</div>
+</div></section>
+<section id="about"><div class="container"><div class="section-head reveal"><div class="kicker">01 / A LITTLE ABOUT ME</div><h2>Design empathy.<br><span class="gradient-text">Engineering precision.</span></h2><p>I enjoy making technology feel clear and useful — from the first wireframe to the project documentation that helps bring it to life.</p></div>
+<div class="about-grid"><article class="glass-card about-card reveal"><h3>My approach</h3><p>As a fourth-year Computer Engineering student based in Rizal, Philippines, I’m especially drawn to UI/UX design. I like learning what people need, organizing information into clear user journeys, and shaping those ideas into thoughtful wireframes and prototypes.</p><p>I also value the work behind a polished experience: documenting decisions clearly, sharing ideas with teammates, and refining details through feedback. My goal is to make digital products feel intuitive, inclusive, and easy to use.</p><div class="tag-list"><span class="tag">User-centered</span><span class="tag">Design-focused</span><span class="tag">Documentation-minded</span></div></article>
+<div class="focus-list reveal reveal-delay"><div class="focus-item"><div class="focus-icon">✳</div><b>Human-centered design</b><span>Interfaces shaped around real people, needs, and clear journeys.</span></div><div class="focus-item"><div class="focus-icon">⌘</div><b>UI/UX prototyping</b><span>Wireframes and prototypes that make ideas easier to explore.</span></div><div class="focus-item"><div class="focus-icon">⌁</div><b>Technical documentation</b><span>Organized project papers and design decisions others can follow.</span></div><div class="focus-item"><div class="focus-icon">◈</div><b>Team communication</b><span>Listening, sharing ideas, and collaborating toward a clear outcome.</span></div></div></div>
+</div></section>
+<section id="projects"><div class="container"><div class="section-head reveal"><div class="kicker">02 / SELECTED WORK</div><h2>Projects with <span class="gradient-text">purpose.</span></h2><p>Product experience design, assistive technology, and engineering research — with thoughtful design making complex ideas easier to use. Hover a card to preview it, or select it for more detail.</p></div>
+<div class="projects-grid">
+<article class="glass-card project-card reveal" tabindex="0" role="button" data-project="iseekct" aria-label="iSEEKct campus lost-and-found project. Hover or focus to preview; activate for details."><div class="project-flip"><div class="project-face project-front"><div class="project-visual project-visual-iseek"><img src="assets/iseekct-logo.jpg" alt="iSEEKct logo with a magnifying glass and the words Your smart lost and found platform"></div><div class="kicker">PRODUCT DESIGN · UX</div><h3>iSEEKct</h3><p>A campus lost-and-found service concept that brings item reports, discovery, and status updates into one clear experience.</p><div class="tag-list"><span class="tag">UI/UX</span><span class="tag">User flows</span><span class="tag">Prototyping</span></div><small class="project-flip-hint">Hover or focus to preview · activate for details</small></div><div class="project-face project-back"><div class="project-back-top"><span class="kicker">PROJECT SNAPSHOT</span><span class="project-back-icon">⌕</span></div><h3>Find it with less friction.</h3><p>A student project focused on making it easier to report, browse, and follow up on lost and found items in a campus community.</p><ul><li>Clear item-reporting and browsing flows</li><li>Consistent details and status information</li><li>Trustworthy, easy-to-follow interactions</li></ul><small class="project-flip-hint">Activate for the full project summary ↗</small></div></div></article>
+<article class="glass-card project-card reveal reveal-delay" tabindex="0" role="button" data-project="auber" aria-label="AuberCrisplicious eggplant chips brand and feasibility project. Hover or focus to preview; activate for details."><div class="project-flip"><div class="project-face project-front"><div class="project-visual project-visual-logo"><img src="assets/aubercrisplicious-logo.jpg" alt="AuberCrisplicious eggplant chips logo from the project feasibility study"></div><div class="kicker">BRAND CONCEPT · FEASIBILITY</div><h3>AuberCrisplicious</h3><p>A student business concept for affordable, crispy eggplant chips, supported by a feasibility study and its original brand identity.</p><div class="tag-list"><span class="tag">Brand identity</span><span class="tag">Visual design</span><span class="tag">Documentation</span></div><small class="project-flip-hint">Hover or focus to preview · activate for details</small></div><div class="project-face project-back"><div class="project-back-top"><span class="kicker">PROJECT SNAPSHOT</span><span class="project-back-icon">✿</span></div><h3>Overly crisp, yet so delicious.</h3><p>The feasibility study explores a snack brand centered on eggplant chips, with a friendly identity and a clear, approachable product story.</p><ul><li>Original logo featured in the project report</li><li>Brand values around freshness and affordability</li><li>Feasibility research and business documentation</li></ul><small class="project-flip-hint">Activate for the full project summary ↗</small></div></div></article>
+<article class="glass-card project-card reveal" tabindex="0" role="button" data-project="irrigation" aria-label="Solar-powered subsurface irrigation research project. Hover or focus to preview; activate for details."><div class="project-flip"><div class="project-face project-front"><div class="project-visual"><img src="assets/solar-irrigation-preview.svg" alt="Illustrated solar-powered irrigation dashboard and eggplant field"></div><div class="kicker">AGRICULTURAL SYSTEMS · RESEARCH</div><h3>Solar-Powered Subsurface Irrigation</h3><p>A research project exploring automated, solar-powered subsurface irrigation for eggplant farming.</p><div class="tag-list"><span class="tag">Sustainable systems</span><span class="tag">Research</span><span class="tag">Dashboard UX</span></div><small class="project-flip-hint">Hover or focus to preview · activate for details</small></div><div class="project-face project-back"><div class="project-back-top"><span class="kicker">PROJECT SNAPSHOT</span><span class="project-back-icon">⌁</span></div><h3>Water where the roots need it.</h3><p>A study of an automated system that combines solar power with subsurface irrigation to support eggplant cultivation.</p><ul><li>Solar-powered operation</li><li>Automated subsurface water delivery</li><li>Research and system documentation</li></ul><small class="project-flip-hint">Activate for the full project summary ↗</small></div></div></article>
+<article class="glass-card project-card reveal reveal-delay" tabindex="0" role="button" data-project="neurocomm" aria-label="NeuroComm Board Converter assistive communication project. Hover or focus to preview; activate for details."><div class="project-flip"><div class="project-face project-front"><div class="project-visual"><img src="assets/neurocomm-preview.svg" alt="Illustrated button-based augmentative communication board"></div><div class="kicker">ASSISTIVE TECHNOLOGY · EMBEDDED</div><h3>NeuroComm Board Converter</h3><p>A button-based communication aid concept designed to help people with aphasia express everyday needs.</p><div class="tag-list"><span class="tag">Accessible UX</span><span class="tag">Assistive tech</span><span class="tag">Embedded systems</span></div><small class="project-flip-hint">Hover or focus to preview · activate for details</small></div><div class="project-face project-back"><div class="project-back-top"><span class="kicker">PROJECT SNAPSHOT</span><span class="project-back-icon">◈</span></div><h3>Make everyday needs easier to express.</h3><p>The proposal describes a microcontroller-based augmentative and alternative communication device for people with aphasia.</p><ul><li>Simple, button-based communication board</li><li>Audio output for selected messages</li><li>Designed to support day-to-day communication</li></ul><small class="project-flip-hint">Activate for the full project summary ↗</small></div></div></article>
+<article class="glass-card project-card reveal reveal-delay" tabindex="0" role="button" data-project="icctskolar" aria-label="Ongoing ICCTSKOLAR scholarship discovery and matching capstone project. Hover or focus to preview; activate for details."><div class="project-flip"><div class="project-face project-front"><div class="project-visual project-visual-icctskolar"><img src="assets/icctskolar-logo.png" alt="ICCTSkolar Project Nexus logo"></div><div class="kicker">ONGOING CAPSTONE · UI/UX DESIGN</div><h3>ICCTSKOLAR · Project Nexus</h3><p>A mobile scholarship discovery and application-tracking platform for ICCT Colleges students, helping organize scholarship search and preparation.</p><div class="tag-list"><span class="tag">UI/UX Lead Designer</span><span class="tag">Scholarship matching</span><span class="tag">Ongoing</span></div><small class="project-flip-hint">Hover or focus to preview · activate for details</small></div><div class="project-face project-back"><div class="project-back-top"><span class="kicker">ONGOING CAPSTONE</span><span class="project-back-icon">◈</span></div><h3>Make scholarship opportunities easier to navigate.</h3><p>ICCTSKOLAR is being designed as a centralized mobile platform that supports students as they discover scholarships, check preliminary eligibility, and prepare applications.</p><ul><li>Scholarship discovery and rule-based preliminary matching</li><li>Document checklists, deadline reminders, and application tracking</li><li>Student-focused interface design as UI/UX Lead Designer</li></ul><small class="project-flip-hint">Activate for the full project summary ↗</small></div></div></article>
+</div></div></section>
+<section id="skills"><div class="container"><div class="section-head reveal"><div class="kicker">03 / TOOLKIT</div><h2>Skills &amp; <span class="gradient-text">technical matrix.</span></h2><p>Explore the disciplines I bring to a project. Bars are a visual summary of my current focus areas, not formal certification scores.</p></div>
+<div class="skills-wrap reveal"><div class="skill-tabs" role="tablist" aria-label="Skill categories"><button class="skill-tab active" role="tab" aria-selected="true" data-skill="design">✳ UI/UX &amp; Design</button><button class="skill-tab" role="tab" aria-selected="false" data-skill="network">⌘ Cisco &amp; Networking</button><button class="skill-tab" role="tab" aria-selected="false" data-skill="engineering">⌁ Documentation &amp; Collaboration</button></div><div class="glass-card skill-panel" id="skillPanel" role="tabpanel" aria-live="polite"></div></div>
+<div class="glass-card tools-panel reveal reveal-delay"><div class="tools-heading"><div><div class="kicker">MY EVERYDAY TOOLKIT</div><h3>Tools I work with</h3></div><span aria-hidden="true">✳</span></div><div class="tool-groups"><div class="tool-group"><h4>Design &amp; content</h4><div class="tool-list"><span class="tool-chip"><img class="tool-icon" src="assets/tools/canva.svg" alt="" aria-hidden="true">Canva</span><span class="tool-chip"><img class="tool-icon" src="assets/tools/figma.svg" alt="" aria-hidden="true">Figma</span><span class="tool-chip"><img class="tool-icon" src="assets/tools/capcut.svg" alt="" aria-hidden="true">CapCut</span></div></div><div class="tool-group"><h4>AI assistants</h4><div class="tool-list"><span class="tool-chip"><img class="tool-icon" src="assets/tools/claude.svg" alt="" aria-hidden="true">Claude</span><span class="tool-chip"><img class="tool-icon" src="assets/tools/chatgpt.svg" alt="" aria-hidden="true">ChatGPT</span><span class="tool-chip"><img class="tool-icon" src="assets/tools/copilot.svg" alt="" aria-hidden="true">GitHub Copilot</span></div></div><div class="tool-group"><h4>Development &amp; version control</h4><div class="tool-list"><span class="tool-chip"><img class="tool-icon" src="assets/tools/vscode.svg" alt="" aria-hidden="true">Visual Studio Code</span><span class="tool-chip"><img class="tool-icon" src="assets/tools/git.svg" alt="" aria-hidden="true">Git</span><span class="tool-chip"><img class="tool-icon" src="assets/tools/github.svg" alt="" aria-hidden="true">GitHub</span></div></div></div></div>
+</div></section>
+<section id="journey"><div class="container"><div class="section-head reveal"><div class="kicker">04 / MY JOURNEY</div><h2>Learning by <span class="gradient-text">building.</span></h2><p>My current path blends formal engineering studies with project-based practice across digital product design and networking.</p></div>
+<div class="timeline"><article class="glass-card timeline-card reveal"><div class="date">CURRENT · FOURTH YEAR</div><h3>Computer Engineering &amp; Networking Studies</h3><p>Building on my studies in computing systems, network infrastructure, technical analysis, and engineering problem-solving.</p></article><article class="glass-card timeline-card reveal reveal-delay"><div class="date">PROJECT-BASED PRACTICE</div><h3>UI/UX &amp; Prototype Design</h3><p>Turning early ideas into organized user flows, wireframes, interactive prototypes, and clearer digital experiences.</p></article><article class="glass-card timeline-card reveal"><div class="date">NETWORK LABS</div><h3>Cisco Configuration &amp; Diagnostics</h3><p>Practicing VLAN segmentation, trunking, IP addressing, routing, DHCP, and connectivity troubleshooting in simulated environments.</p></article><article class="glass-card timeline-card reveal reveal-delay"><div class="date">INTERDISCIPLINARY PROJECTS</div><h3>Design for Useful Technology</h3><p>Exploring how usable interfaces can make campus services and sustainable agriculture systems easier to operate.</p></article></div>
+</div></section>
+<section id="contact"><div class="container"><div class="section-head reveal"><div class="kicker">05 / LET'S CONNECT</div><h2>Have an idea? <span class="gradient-text">Let's build it.</span></h2><p>Open to thoughtful collaborations, project conversations, and opportunities to learn with a team.</p></div>
+<div class="contact-grid"><div class="glass-card contact-intro reveal"><h3>Find me online</h3><p>Reach out through any of these channels. I'd be happy to hear what you're working on.</p><div class="contact-links"><a class="contact-link" href="mailto:juviletecatungal295@gmail.com"><span class="link-icon">✉</span><span><b>Email</b><small>juviletecatungal295@gmail.com</small></span></a><a class="contact-link" href="https://github.com/velumi09" target="_blank" rel="noopener noreferrer"><span class="link-icon">⌘</span><span><b>GitHub</b><small>github.com/velumi09</small></span></a><a class="contact-link" href="https://www.linkedin.com/in/juvilete-catungal-5b8016374/" target="_blank" rel="noopener noreferrer"><span class="link-icon">in</span><span><b>LinkedIn</b><small>Connect professionally</small></span></a><a class="contact-link" href="https://www.instagram.com/bluvelri?rpxt=Ymllcm85MWV3MzF0" target="_blank" rel="noopener noreferrer"><span class="link-icon">◎</span><span><b>Instagram</b><small>@bluvelri</small></span></a><a class="contact-link" href="https://www.facebook.com/share/1A4QqYqmUL/" target="_blank" rel="noopener noreferrer"><span class="link-icon">f</span><span><b>Facebook</b><small>Visit my Facebook profile</small></span></a></div></div>
+<form class="glass-card reveal reveal-delay" id="contactForm"><div class="form-grid"><div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required minlength="2" placeholder="e.g. Alex Santos"></div><div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="alex@example.com"></div><div class="field full"><label for="subject">Subject</label><input id="subject" name="subject" required minlength="3" placeholder="What would you like to discuss?"></div><div class="field full"><label for="message">Message</label><textarea id="message" name="message" required minlength="10" placeholder="Tell me a little about your idea..."></textarea></div><div class="field full"><button class="btn btn-primary" type="submit">Prepare Email <span>↗</span></button><p class="form-note">This form opens your default email app with the message filled in. It does not send or store your information on this website.</p><div class="form-feedback" id="formFeedback" role="status" aria-live="polite"></div></div></div></form>
+</div></div></section>
+</main>
+<footer><div class="container footer-inner"><span>© <span id="year"></span> <strong>Juvilete A. Catungal</strong> · Made with intention.</span><span>Designed in blueberry blues, engineered with curiosity. <a class="back-top" href="#home">Back to top ↑</a></span></div></footer>
+<button class="scroll-top" id="scrollTop" type="button" aria-label="Scroll back to top" title="Back to the flower garden"><span class="scroll-top-arrow">↑</span><span class="scroll-top-flower" aria-hidden="true">✿</span></button>
+<div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-box"><div class="modal-head"><div><div class="kicker" id="modalKicker">PROJECT DETAILS</div><h3 id="modalTitle">Project title</h3></div><button class="modal-close" id="modalClose" aria-label="Close project details">✕</button></div><div id="modalBody"></div></div></div><div class="toast" id="toast" role="status"></div>
+<script>
+const $=(s,root=document)=>root.querySelector(s), $$=(s,root=document)=>[...root.querySelectorAll(s)];
+
+// Portfolio companions greet visitors and guide them through the work.
+function showToast(message){const toast=$('#toast');toast.textContent=message;toast.classList.add('show');clearTimeout(showToast.timer);showToast.timer=setTimeout(()=>toast.classList.remove('show'),2300);}
+let soundEnabled=sessionStorage.getItem('juvilete-sounds')!=='off',soundContext;
+const soundToggle=$('#soundToggle');
+function updateSoundToggle(){
+  soundToggle.textContent=soundEnabled?'♫':'♪';
+  soundToggle.setAttribute('aria-pressed',String(soundEnabled));
+  soundToggle.setAttribute('aria-label',soundEnabled?'Turn portfolio sounds off':'Turn portfolio sounds on');
+  soundToggle.title=soundEnabled?'Turn sounds off':'Turn sounds on';
+}
+function playCuteSound(kind='click'){
+  if(!soundEnabled)return;
+  const AudioContextClass=window.AudioContext||window.webkitAudioContext;
+  if(!AudioContextClass)return;
+  soundContext=soundContext||new AudioContextClass();
+  if(soundContext.state==='suspended')soundContext.resume();
+  const now=soundContext.currentTime;
+  const notes=kind==='top'?[659.25,783.99,987.77,1318.51]:kind==='pet'?[880,1174.66]:kind==='success'?[783.99,1046.5,1318.51]:[kind==='tab'?659.25:kind==='project'?587.33:739.99];
+  notes.forEach((frequency,index)=>{
+    const start=now+index*(kind==='top'?.105:.09),duration=kind==='top'?.24:.16;
+    const oscillator=soundContext.createOscillator(),volume=soundContext.createGain();
+    oscillator.type='sine';
+    oscillator.frequency.setValueAtTime(frequency,start);
+    if(kind==='pet')oscillator.frequency.exponentialRampToValueAtTime(frequency*.82,start+duration);
+    volume.gain.setValueAtTime(.0001,start);
+    volume.gain.exponentialRampToValueAtTime(kind==='top'?.065:.045,start+.018);
+    volume.gain.exponentialRampToValueAtTime(.0001,start+duration);
+    oscillator.connect(volume);volume.connect(soundContext.destination);
+    oscillator.start(start);oscillator.stop(start+duration+.02);
+  });
+}
+updateSoundToggle();
+soundToggle.addEventListener('click',()=>{
+  soundEnabled=!soundEnabled;
+  sessionStorage.setItem('juvilete-sounds',soundEnabled?'on':'off');
+  updateSoundToggle();
+  if(soundEnabled)playCuteSound('success');
+  showToast(soundEnabled?'Cute garden sounds are on ♫':'Garden sounds are off');
+});
+const petTours={
+  wonu:{emoji:'😻',restingEmoji:'🐈‍⬛',destination:'projects',state:'MISSION: project tour unlocked ✓',toast:'Wonu is leading you to Juvilete’s project garden 🐾'},
+  chewy:{emoji:'🐰',restingEmoji:'🐇',destination:'skills',state:'MISSION: skills tour unlocked ✓',toast:'Chewy is hopping over to Juvilete’s skills 🌸'}
+};
+$$('.pet-buddy').forEach(pet=>{
+pet.addEventListener('pointerleave',()=>{
+  const tour=petTours[pet.dataset.pet];
+  if(tour)$('.pet-art',pet).textContent=tour.restingEmoji;
+});
+pet.addEventListener('click',()=>{
+  const art=$('.pet-art',pet),tour=petTours[pet.dataset.pet],state=$('.task-state',pet),bar=$('.task-bar span',pet);
+  if(!tour)return;
+  pet.classList.add('task-done');
+  pet.classList.add('task-open');
+  art.textContent=tour.emoji;
+  state.textContent=tour.state;
+  bar.style.width='100%';
+  showToast(tour.toast);
+  const destination=document.getElementById(tour.destination);
+  if(destination)setTimeout(()=>destination.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}),450);
+  const distance=matchMedia('(max-width: 680px)').matches?22:52;
+  pet.classList.remove('walking');
+  void pet.offsetWidth;
+  pet.classList.add('walking');
+  const walk=pet.animate([
+    {transform:'translateX(0) translateY(0) rotate(0) scale(1)'},
+    {transform:`translateX(${distance*.52}px) translateY(-5px) rotate(5deg) scale(1.04)`,offset:.32},
+    {transform:`translateX(${distance}px) translateY(0) rotate(-3deg) scale(1)`,offset:.58},
+    {transform:`translateX(${distance*.45}px) translateY(-4px) rotate(4deg) scale(1.03)`,offset:.82},
+    {transform:'translateX(0) translateY(0) rotate(0) scale(1)'}
+  ],{duration:1450,easing:'cubic-bezier(.4,0,.2,1)'});
+  walk.onfinish=()=>pet.classList.remove('walking');
+  const rect=pet.getBoundingClientRect();
+  magicBurst(rect.left+rect.width/2,rect.top+rect.height/2,12);
+  clearTimeout(pet.closeTimer);pet.closeTimer=setTimeout(()=>pet.classList.remove('task-open'),5200);
+});
+});
+// Create a field of bluebell blossoms and fireflies; all decorative elements are generated locally.
+(function seedMeadow(){
+ const meadow=$('#liveMeadow');if(!meadow)return;
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const flowers=['✿','❀','✾','❋','❃','✽'];
+ const colors=['#c4b5fd','#b9c5ff','#d8b4fe','#a5b4fc','#c7d2fe'];
+ for(let i=0;i<19;i++){const f=document.createElement('span');f.className='meadow-flower';f.textContent=flowers[i%flowers.length];f.style.setProperty('--x',`${(i*37+7)%97}%`);f.style.setProperty('--y',`${(i*53+9)%95}%`);f.style.setProperty('--size',`${.75+(i%5)*.28}rem`);f.style.setProperty('--color',colors[i%colors.length]);f.style.setProperty('--opacity',`${.15+(i%4)*.09}`);f.style.setProperty('--duration',`${8+(i%7)*2}s`);f.style.setProperty('--delay',`${-(i%9)}s`);f.style.setProperty('--sway',`${(i%2?1:-1)*(10+(i%4)*5)}px`);meadow.appendChild(f)}
+ for(let i=0;i<(innerWidth<680?15:29);i++){const dot=document.createElement('span');dot.className='firefly';dot.style.setProperty('--x',`${(i*31+11)%99}%`);dot.style.setProperty('--y',`${(i*47+5)%97}%`);dot.style.setProperty('--duration',`${7+(i%8)*1.6}s`);dot.style.setProperty('--delay',`${-(i%11)}s`);dot.style.setProperty('--dx',`${(i%2?1:-1)*(18+(i%5)*12)}px`);dot.style.setProperty('--dy',`${(i%3?1:-1)*(15+(i%4)*11)}px`);meadow.appendChild(dot)}
+ if(reduced){meadow.querySelectorAll('.meadow-flower,.firefly,.meadow-glow').forEach(el=>el.style.animation='none')}
+})();
+// A small bluebell bouquet trails the pointer on mouse-capable devices.
+const cursorBouquet=$('#cursorBouquet');
+const finePointer=window.matchMedia('(hover: hover) and (pointer: fine)');
+const motionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
+if(cursorBouquet&&finePointer.matches&&!motionPreference.matches){
+  let targetX=0,targetY=0,currentX=0,currentY=0,following=false,lastPetal=0;
+  const followPointer=()=>{
+    if(!following)return;
+    currentX+=(targetX-currentX)*.18;
+    currentY+=(targetY-currentY)*.18;
+    cursorBouquet.style.transform=`translate3d(${currentX}px,${currentY}px,0) translate(-38%,-65%)`;
+    requestAnimationFrame(followPointer);
+  };
+  window.addEventListener('pointermove',event=>{
+    targetX=event.clientX;targetY=event.clientY;
+    if(!following){
+      currentX=targetX;currentY=targetY;following=true;
+      cursorBouquet.classList.add('is-visible');
+      requestAnimationFrame(followPointer);
+    }
+    const now=performance.now();
+    if(now-lastPetal<95)return;
+    lastPetal=now;
+    const petal=document.createElement('span');
+    petal.className='cursor-petal';
+    petal.textContent=Math.random()>.5?'✿':'✧';
+    petal.style.left=`${event.clientX+(Math.random()*18-9)}px`;
+    petal.style.top=`${event.clientY+(Math.random()*18-9)}px`;
+    petal.style.setProperty('--petal-size',`${.35+Math.random()*.3}rem`);
+    petal.style.setProperty('--petal-dx',`${Math.random()*36-18}px`);
+    document.body.appendChild(petal);
+    petal.addEventListener('animationend',()=>petal.remove(),{once:true});
+  },{passive:true});
+  window.addEventListener('pointerleave',()=>{
+    following=false;
+    cursorBouquet.classList.remove('is-visible');
+  });
+}
+// Soft pointer glow and click ripples on interactive surfaces.
+$$('.project-card').forEach(card=>card.addEventListener('pointermove',e=>{const r=card.getBoundingClientRect();card.style.setProperty('--mx',`${e.clientX-r.left}px`);card.style.setProperty('--my',`${e.clientY-r.top}px`)}));
+const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+function magicBurst(x,y,count=14){
+  if(reducedMotion.matches)return;
+  const flowers=['✿','❀','✾','✧','❋'];
+  for(let i=0;i<count;i++){
+    const berry=i%4===3,particle=document.createElement('span');
+    particle.className=`magic-particle ${berry?'magic-berry':'magic-flower'}`;
+    if(!berry)particle.textContent=flowers[Math.floor(Math.random()*flowers.length)];
+    const angle=(Math.PI*2*i/count)+(Math.random()-.5)*.5,distance=42+Math.random()*78;
+    particle.style.left=`${x}px`;particle.style.top=`${y}px`;
+    particle.style.setProperty('--burst-x',`${Math.cos(angle)*distance}px`);
+    particle.style.setProperty('--burst-y',`${Math.sin(angle)*distance}px`);
+    particle.style.setProperty('--burst-rotate',`${Math.random()*180-90}deg`);
+    particle.style.setProperty('--magic-size',`${.8+Math.random()*.8}rem`);
+    particle.style.setProperty('--berry-size',`${6+Math.random()*8}px`);
+    document.body.appendChild(particle);
+    particle.addEventListener('animationend',()=>particle.remove(),{once:true});
+  }
+}
+function celebrateSection(section){
+  if(!('IntersectionObserver'in window)){
+    const rect=(section.querySelector('.section-head')||section).getBoundingClientRect();
+    magicBurst(innerWidth/2,Math.max(50,Math.min(innerHeight-50,rect.top+70)),18);
+    return;
+  }
+  const observer=new IntersectionObserver(entries=>{
+    if(!entries.some(entry=>entry.isIntersecting))return;
+    observer.disconnect();
+    const heading=section.querySelector('.section-head')||section;
+    const rect=heading.getBoundingClientRect();
+    magicBurst(Math.min(innerWidth-40,Math.max(40,rect.left+Math.min(rect.width/2,innerWidth/2))),Math.min(innerHeight-40,Math.max(45,rect.top+Math.min(rect.height/2,90))),18);
+  },{threshold:.12});
+  observer.observe(section);
+  setTimeout(()=>observer.disconnect(),5000);
+}
+const hoverTimes=new WeakMap();
+document.addEventListener('pointerover',event=>{
+  const target=event.target.closest('.btn,.icon-btn,.menu-btn,.skill-tab,.contact-link,.pet-buddy,.project-card,.modal-close');
+  if(!target||target.contains(event.relatedTarget))return;
+  const now=performance.now();
+  if(now-(hoverTimes.get(target)||0)<450)return;
+  hoverTimes.set(target,now);
+  const rect=target.getBoundingClientRect();
+  magicBurst(rect.left+rect.width/2,rect.top+rect.height/2,3);
+},{passive:true});
+document.addEventListener('click',e=>{
+  const target=e.target.closest('.btn,.icon-btn,.menu-btn,.skill-tab,.contact-link,.pet-buddy,.project-card,.modal-close,.nav-links a,.back-top,.scroll-top');
+  if(!target)return;
+  if(target.id==='soundToggle')return;
+  const soundKind=target.id==='scrollTop'?'top':target.matches('.pet-buddy')?'pet':target.matches('.project-card')?'project':target.matches('.skill-tab')?'tab':'click';
+  playCuteSound(soundKind);
+  magicBurst(e.clientX,e.clientY,18);
+  if(target.matches('.btn,.icon-btn,.menu-btn,.skill-tab,.contact-link,.pet-buddy')){
+    const rect=target.getBoundingClientRect(),size=Math.max(rect.width,rect.height);
+    const ripple=document.createElement('span');ripple.className='ripple';ripple.style.width=ripple.style.height=size+'px';
+    ripple.style.left=(e.clientX-rect.left-size/2)+'px';ripple.style.top=(e.clientY-rect.top-size/2)+'px';
+    target.appendChild(ripple);setTimeout(()=>ripple.remove(),650);
+  }
+  const href=target.closest('a[href^="#"]')?.getAttribute('href');
+  if(href&&href.length>1){
+    const section=$(href);
+    if(section)celebrateSection(section);
+  }
+});
+
+// Responsive navigation
+const header=$('#header'),navLinks=$('#navLinks'),menuToggle=$('#menuToggle'),scrollTopButton=$('#scrollTop');
+let lastScrollY=window.scrollY;
+window.addEventListener('scroll',()=>{
+  const currentScrollY=window.scrollY;
+  header.classList.toggle('scrolled',scrollY>20);
+  document.body.classList.toggle('scrolling-up',currentScrollY<lastScrollY);
+  lastScrollY=currentScrollY;
+  scrollTopButton.classList.toggle('visible',currentScrollY>450);
+  const maxScroll=document.documentElement.scrollHeight-innerHeight;
+  $('#scrollProgress').style.width=`${maxScroll>0?(scrollY/maxScroll)*100:0}%`;
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    const flowers=$$('.meadow-flower');
+    flowers.forEach((f,i)=>{f.style.marginTop=`${Math.sin(scrollY*.002+i)*Math.min(scrollY*.012,18)}px`});
+  }
+},{passive:true});
+window.dispatchEvent(new Event('scroll'));
+function startTopGardenTrail(button){
+  if(reducedMotion.matches)return;
+  const rect=button.getBoundingClientRect(),startX=rect.left+rect.width/2,startY=rect.top+rect.height/2;
+  const endX=innerWidth*.52,endY=76,duration=Math.min(1800,Math.max(900,scrollY*.95));
+  const startTime=performance.now();
+  let lastSpawn=0,spawned=0;
+  const trailFrame=now=>{
+    const progress=Math.min(1,(now-startTime)/duration);
+    const eased=progress<.5?4*progress*progress*progress:1-Math.pow(-2*progress+2,3)/2;
+    if(now-lastSpawn>38&&spawned<42){
+      lastSpawn=now;spawned++;
+      const particle=document.createElement('span');
+      const berry=spawned%4===0;
+      particle.className=`top-garden-trail ${berry?'top-trail-berry':'top-trail-flower'}`;
+      if(!berry)particle.textContent=['✿','❀','✾','✧'][spawned%4];
+      const sway=Math.sin(progress*Math.PI*2)*95+(Math.random()-.5)*55;
+      const x=Math.max(12,Math.min(innerWidth-12,startX+(endX-startX)*eased+sway));
+      const y=startY+(endY-startY)*eased;
+      particle.style.left=`${x}px`;particle.style.top=`${y}px`;
+      particle.style.setProperty('--trail-size',berry?`${7+Math.random()*7}px`:`${.75+Math.random()*.7}rem`);
+      particle.style.setProperty('--trail-dx',`${Math.random()*46-23}px`);
+      particle.style.setProperty('--trail-rotate',`${Math.random()*100-50}deg`);
+      document.body.appendChild(particle);
+      particle.addEventListener('animationend',()=>particle.remove(),{once:true});
+    }
+    if(progress<1)requestAnimationFrame(trailFrame);
+  };
+  requestAnimationFrame(trailFrame);
+}
+scrollTopButton.addEventListener('click',()=>{
+  startTopGardenTrail(scrollTopButton);
+  window.scrollTo({top:0,behavior:reducedMotion.matches?'auto':'smooth'});
+  magicBurst(scrollTopButton.getBoundingClientRect().left+scrollTopButton.offsetWidth/2,scrollTopButton.getBoundingClientRect().top+scrollTopButton.offsetHeight/2,22);
+});
+menuToggle.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuToggle.setAttribute('aria-expanded',String(open));menuToggle.textContent=open?'✕':'☰'});
+$$('.nav-links a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');menuToggle.textContent='☰'}));
+// Theme toggle (saved only for this browser session)
+const themeToggle=$('#themeToggle');
+if(sessionStorage.getItem('juvilete-theme')==='light')document.body.classList.add('light');
+function updateThemeIcon(){themeToggle.textContent=document.body.classList.contains('light')?'☾':'☼';}
+updateThemeIcon();themeToggle.addEventListener('click',()=>{document.body.classList.toggle('light');sessionStorage.setItem('juvilete-theme',document.body.classList.contains('light')?'light':'dark');updateThemeIcon()});
+// Animated skill tabs
+const skillData={
+design:{title:'UI/UX & Design',desc:'Turning user needs into clear, thoughtful, and accessible interface experiences.',items:[['User flows & information architecture','Structure'],['Wireframing & layout planning','Wireframes'],['Interactive prototype creation','Prototyping'],['Usability review & design consistency','Validation']]},
+network:{title:'Cisco & Networking',desc:'Practical networking knowledge from coursework and simulated project environments.',items:[['Cisco Packet Tracer','Simulation'],['VLANs & network segmentation','Layer 2'],['IPv4 addressing & subnetting','Addressing'],['Network diagrams & CLI troubleshooting','Documentation']]},
+engineering:{title:'Documentation & Collaboration',desc:'Communicating project ideas clearly and working thoughtfully with a team.',items:[['Technical report writing','Documentation'],['Project papers & document organization','Writing'],['Team communication & collaboration','Teamwork'],['HTML, CSS & JavaScript fundamentals','Web']]}
+};
+function renderSkills(key){const d=skillData[key];$('#skillPanel').innerHTML=`<h3>${d.title}</h3><p>${d.desc}</p><div class="skill-items">${d.items.map((item,i)=>`<div class="skill-item"><div class="skill-item-top"><span>${item[0]}</span><small>${item[1]}</small></div><div class="skill-track"><span style="--level:${[88,82,76,84][i]}%"></span></div></div>`).join('')}</div>`}
+renderSkills('design');$$('.skill-tab').forEach(btn=>btn.addEventListener('click',()=>{$$('.skill-tab').forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-selected',String(b===btn))});renderSkills(btn.dataset.skill)}));
+// Project details
+const projects={
+iseekct:{kicker:'PRODUCT DESIGN · UX',title:'iSEEKct — Campus Lost & Found',role:'Project focus: user-centered flows and prototype design',overview:'A campus lost-and-found project that brings item reporting, browsing, and follow-up into a more consistent experience for school communities.',highlights:['Clear flows for reporting, browsing, and claiming found items','Consistent item information and status updates','A focus on trust, clarity, and reduced friction']},
+auber:{kicker:'BRAND CONCEPT · FEASIBILITY',title:'AuberCrisplicious',role:'Project focus: feasibility study and brand identity concept',overview:'A student business concept for affordable eggplant chips, presented with an original logo and a feasibility study exploring the product and its audience.',highlights:['Original AuberCrisplicious logo from the project report','Brand values centered on freshness and affordability','Business feasibility and product documentation']},
+irrigation:{kicker:'AGRICULTURAL SYSTEMS · RESEARCH',title:'Solar-Powered Subsurface Irrigation',role:'Project focus: automated irrigation research concept',overview:'A research project exploring an automated, solar-powered subsurface irrigation system for eggplant farming.',highlights:['Solar-powered system operation','Automated subsurface water delivery','Research and system documentation']},
+neurocomm:{kicker:'ASSISTIVE TECHNOLOGY · EMBEDDED',title:'NeuroComm Board Converter',role:'Project focus: accessible communication concept',overview:'A proposal for a microcontroller-based, button-operated augmentative and alternative communication device with audio output, intended to support people with aphasia in expressing everyday needs.',highlights:['Button-based communication board','Audio output for selected messages','Designed to support day-to-day communication at home or in care settings']},
+icctskolar:{kicker:'ONGOING CAPSTONE · UI/UX DESIGN',title:'ICCTSKOLAR — Project Nexus',role:'UI/UX Lead Designer',overview:'An ongoing mobile scholarship discovery, preliminary matching, and application-tracking system for college students at ICCT Colleges. The project supports scholarship discovery, requirement preparation, deadline monitoring, and personal progress tracking; scholarship applications continue through each provider’s official channels.',highlights:['Centralized scholarship directory and rule-based preliminary matching','Student-focused discovery and application-readiness experience','Document checklists, deadline reminders, and self-reported application tracking','UI/UX design contribution as a member of the capstone team']}
+};
+function openProject(key){const p=projects[key];if(!p)return;$('#modalKicker').textContent=p.kicker;$('#modalTitle').textContent=p.title;$('#modalBody').innerHTML=`<p><strong style="color:var(--text)">Role:</strong> ${p.role.replace('Project focus: ','')}</p><p>${p.overview}</p><h4>Highlights</h4><ul>${p.highlights.map(x=>`<li>${x}</li>`).join('')}</ul><p style="font-size:.76rem">Project details are summarized from the supplied project documents.</p>`;$('#projectModal').classList.add('open');document.body.style.overflow='hidden';$('#modalClose').focus();requestAnimationFrame(()=>{const rect=$('#projectModal .modal-box').getBoundingClientRect();magicBurst(rect.left+rect.width/2,rect.top+rect.height/2,20)})}
+function closeProject(){$('#projectModal').classList.remove('open');document.body.style.overflow=''}
+$$('[data-project]').forEach(card=>{card.addEventListener('click',()=>openProject(card.dataset.project));card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openProject(card.dataset.project)}})});
+$('#modalClose').addEventListener('click',closeProject);$('#projectModal').addEventListener('click',e=>{if(e.target===$('#projectModal'))closeProject()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeProject()});
+// Contact form validates locally, then prepares a draft in the visitor's email client.
+$('#contactForm').addEventListener('submit',e=>{e.preventDefault();const form=e.currentTarget;if(!form.reportValidity())return;const name=$('#name').value.trim(),email=$('#email').value.trim(),subject=$('#subject').value.trim(),message=$('#message').value.trim();const body=`Hi Juvilete,\\n\\n${message}\\n\\nBest,\\n${name}\\n${email}`;const url=`mailto:juviletecatungal295@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;$('#formFeedback').textContent='Your email draft is ready to open.';window.location.href=url;});
+$('#year').textContent=new Date().getFullYear();
+// Reveal-on-scroll animation with a safe fallback.
+if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>entry.target.classList.toggle('visible',entry.isIntersecting)),{threshold:.1,rootMargin:'0px 0px -4% 0px'});$$('.reveal').forEach(el=>observer.observe(el))}else $$('.reveal').forEach(el=>el.classList.add('visible'));
+// Canvas particles: light, responsive, and mouse-aware.
+const canvas=$('#particles'),ctx=canvas.getContext('2d');let w=0,h=0,nodes=[],mouse={x:-1000,y:-1000};function resizeCanvas(){const dpr=Math.min(window.devicePixelRatio||1,2);w=innerWidth;h=innerHeight;canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);const count=Math.min(65,Math.floor(w*h/19000));nodes=Array.from({length:count},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.8+.5,vx:(Math.random()-.5)*.22,vy:(Math.random()-.5)*.22,a:Math.random()*.38+.12}))}window.addEventListener('resize',resizeCanvas);window.addEventListener('pointermove',e=>{mouse.x=e.clientX;mouse.y=e.clientY},{passive:true});window.addEventListener('pointerleave',()=>{mouse.x=-1000;mouse.y=-1000});resizeCanvas();function animateParticles(){ctx.clearRect(0,0,w,h);for(const p of nodes){const dx=p.x-mouse.x,dy=p.y-mouse.y,dist=Math.hypot(dx,dy);if(dist<115&&dist>0){p.x+=dx/dist*.18;p.y+=dy/dist*.18}p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(196,181,253,${p.a})`;ctx.fill()}for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){const a=nodes[i],b=nodes[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<100){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=`rgba(139,92,246,${.08*(1-d/100)})`;ctx.lineWidth=.6;ctx.stroke()}}requestAnimationFrame(animateParticles)}animateParticles();
+// Active section indicator
+const sections=$$('main section[id]');if('IntersectionObserver'in window){const activeObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){$$('.nav-links a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id))}}),{rootMargin:'-35% 0px -55% 0px'});sections.forEach(s=>activeObserver.observe(s))}
+</script>
+</body>
+</html>
